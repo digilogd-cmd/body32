@@ -20,6 +20,7 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-003 | Diagnostic algorithm and domain data model | Complete |
 | TASK-004 | Technical architecture, database, and API design | Complete |
 | TASK-005 | Web application foundation and quality tooling | Complete |
+| TASK-006 | Versioned algorithm engine and type registry | Complete |
 | TASK-006+ | Feature implementation, QA, and deployment | Planned |
 
 ## Required task sections
