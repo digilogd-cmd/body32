@@ -1,6 +1,7 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
+import {useState} from 'react';
 
 import {Button} from '@/components/ui/button';
 import {ELEMENT_KEYS, type Body32Result} from '@/domain/algorithm/types';
@@ -8,6 +9,7 @@ import {ARCHETYPE_CONTENT, RHYTHM_CONTENT} from '@/domain/guardian/content';
 import {getGuardianType} from '@/domain/guardian/registry';
 import {Link} from '@/i18n/navigation';
 import type {AppLocale} from '@/i18n/routing';
+import {downloadPassport, type PassportFormat, type PassportRenderData} from '@/lib/passport/renderer';
 
 export interface ResultExperienceProps {
   locale: AppLocale;
@@ -17,6 +19,7 @@ export interface ResultExperienceProps {
 
 export function ResultExperience({locale, result, onRestart}: ResultExperienceProps) {
   const t = useTranslations('Result');
+  const [downloadState, setDownloadState] = useState<'idle' | 'working' | 'saved' | 'error'>('idle');
   const guardian = getGuardianType(result.stableTypeId);
   if (!guardian) return null;
 
@@ -26,18 +29,39 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
   const dominantElement = ELEMENT_KEYS.reduce((highest, element) => (
     result.elements[element] > result.elements[highest] ? element : highest
   ));
+  const typeNumber = String(guardian.displayOrder).padStart(2, '0');
+  const passportData: PassportRenderData = {
+    typeNumber,
+    guardianName: name,
+    rhythm: result.rhythm,
+    archetype: result.archetype,
+    summary: rhythm.summary[locale],
+    elements: result.elements,
+    elementLabels: Object.fromEntries(ELEMENT_KEYS.map((element) => [element, t(`elements.${element}`)])) as Record<(typeof ELEMENT_KEYS)[number], string>,
+    footer: t('passport.footer')
+  };
+
+  async function savePassport(format: PassportFormat) {
+    try {
+      setDownloadState('working');
+      await downloadPassport(passportData, format);
+      setDownloadState('saved');
+    } catch {
+      setDownloadState('error');
+    }
+  }
 
   return (
     <main className={`result-shell result-theme--${result.rhythm.toLowerCase()}`}>
       <header className="result-header">
         <Link className="wordmark wordmark--inverse" href="/">BODY<span>32</span></Link>
-        <span>{t('typeNumber', {number: String(guardian.displayOrder).padStart(2, '0')})}</span>
+        <span>{t('typeNumber', {number: typeNumber})}</span>
       </header>
 
       <section className="result-hero" aria-labelledby="result-title">
         <div className="guardian-emblem" aria-label={t('guardianFallback', {name})} role="img">
           <span>{result.archetype.slice(0, 1)}</span>
-          <small>{String(guardian.displayOrder).padStart(2, '0')}</small>
+          <small>{typeNumber}</small>
         </div>
         <div className="result-identity">
           <p className="result-kicker">{result.rhythm} · {result.archetype}</p>
@@ -109,13 +133,25 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
       </section>
 
       <section className="passport-preview" aria-labelledby="passport-title">
-        <div>
+        <div className="passport-copy">
           <p className="eyebrow">BODY32 PASSPORT</p>
           <h2 id="passport-title">{t('passport.title')}</h2>
           <p>{t('passport.description')}</p>
+          <div className="passport-actions">
+            <Button disabled={downloadState === 'working'} onClick={() => savePassport('square')} variant="secondary">{t('passport.saveSquare')}</Button>
+            <Button disabled={downloadState === 'working'} onClick={() => savePassport('story')} variant="secondary">{t('passport.saveStory')}</Button>
+          </div>
+          <p aria-live="polite" className={`passport-status passport-status--${downloadState}`} role="status">
+            {downloadState === 'working' ? t('passport.working') : downloadState === 'saved' ? t('passport.saved') : downloadState === 'error' ? t('passport.error') : ''}
+          </p>
         </div>
-        <div className="passport-mini" aria-hidden="true">
-          <span>BODY32</span><strong>{String(guardian.displayOrder).padStart(2, '0')}</strong><small>{name}</small>
+        <div className="passport-mini" aria-label={t('passport.previewLabel', {name})} role="img">
+          <div className="passport-mini-header"><span>BODY32</span><b>TYPE {typeNumber}</b></div>
+          <strong>{result.archetype.slice(0, 1)}</strong>
+          <div><small>{result.rhythm} · {result.archetype}</small><h3>{name}</h3></div>
+          <div className="passport-mini-balance" aria-hidden="true">
+            {ELEMENT_KEYS.map((element) => <span key={element} style={{height: `${Math.round(result.elements[element])}%`}} />)}
+          </div>
         </div>
       </section>
 

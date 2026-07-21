@@ -65,6 +65,6 @@ describe('QuizExperience', () => {
       fireEvent.click(screen.getByRole('button', {name: index === questions.length - 1 ? 'Finish' : 'Continue'}));
     });
 
-    expect(screen.getByRole('heading', {name: 'Comet Dolphin'})).toBeInTheDocument();
+    expect(screen.getByRole('heading', {name: 'Comet Dolphin', level: 1})).toBeInTheDocument();
   });
 });

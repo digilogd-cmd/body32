@@ -18,6 +18,7 @@
   --color-action-pressed: #304f39;
   --color-action-tint: #eef5ef;
   --color-focus: #233b5e;
+  --color-status-error-on-inverse: #f4b8aa;
   --color-element-wood: #66886d;
   --color-element-fire: #b9664f;
   --color-element-earth: #aa874f;
@@ -260,10 +261,20 @@ h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); font-weight: 620; letter-s
 .passport-preview .eyebrow { color: color-mix(in srgb, var(--result-accent) 65%, white); }
 .passport-preview h2 { max-width: 39rem; }
 .passport-preview p:last-child { max-width: 35rem; color: var(--color-text-inverse-muted); line-height: 1.7; }
-.passport-mini { display: grid; width: min(100%, 18rem); aspect-ratio: 1.58; align-content: space-between; justify-self: center; padding: var(--space-6); border: 1px solid rgb(255 255 255 / 20%); border-radius: var(--radius-xl); background: radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--result-accent) 55%, transparent), transparent 45%), var(--color-bg-inverse-subtle); box-shadow: var(--shadow-2); }
-.passport-mini span { font-size: 0.72rem; font-weight: 750; letter-spacing: 0.08em; }
-.passport-mini strong { font-family: Georgia, serif; font-size: 3.5rem; font-weight: 400; line-height: 1; }
-.passport-mini small { color: var(--color-text-inverse-muted); }
+.passport-copy > p:not(.eyebrow, .passport-status) { max-width: 35rem; color: var(--color-text-inverse-muted); line-height: 1.7; }
+.passport-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+.passport-actions .button { border-color: rgb(255 255 255 / 28%); background: transparent; color: var(--color-text-inverse); }
+.passport-actions .button:hover { background: rgb(255 255 255 / 10%); }
+.passport-status { min-height: 1.5rem; margin: var(--space-3) 0 0; color: var(--color-text-inverse-muted); font-size: 0.75rem; }
+.passport-status--error { color: var(--color-status-error-on-inverse); }
+.passport-mini { display: grid; width: min(100%, 19rem); aspect-ratio: 1; align-content: space-between; justify-self: center; padding: var(--space-6); border: 1px solid rgb(255 255 255 / 20%); border-radius: var(--radius-xl); background: radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--result-accent) 55%, transparent), transparent 45%), var(--color-bg-inverse-subtle); box-shadow: var(--shadow-2); }
+.passport-mini-header { display: flex; align-items: center; justify-content: space-between; }
+.passport-mini-header span, .passport-mini-header b { font-size: 0.62rem; font-weight: 750; letter-spacing: 0.08em; }
+.passport-mini > strong { font-family: Georgia, serif; font-size: 4.5rem; font-style: italic; font-weight: 400; line-height: 1; }
+.passport-mini small { color: var(--color-text-inverse-muted); font-size: 0.58rem; letter-spacing: 0.06em; }
+.passport-mini h3 { margin: var(--space-1) 0 0; font-size: 1rem; }
+.passport-mini-balance { display: flex; height: 2rem; align-items: end; gap: var(--space-1); }
+.passport-mini-balance span { width: 100%; min-height: 0.2rem; border-radius: var(--radius-full); background: var(--color-text-inverse-muted); opacity: 0.7; }
 .result-actions { display: flex; min-height: 12rem; align-items: center; justify-content: space-between; gap: var(--space-8); }
 .result-actions > p { max-width: 40rem; margin: 0; color: var(--color-text-muted); font-size: 0.75rem; line-height: 1.6; }
 .result-actions > div { display: flex; gap: var(--space-3); flex-shrink: 0; }
