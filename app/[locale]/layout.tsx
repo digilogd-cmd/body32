@@ -29,11 +29,15 @@ export default async function LocaleLayout({children, params}: LocaleLayoutProps
   if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const [messages, accessibility] = await Promise.all([
+    getMessages(),
+    getTranslations({locale, namespace: 'Accessibility'})
+  ]);
 
   return (
     <html lang={locale}>
       <body>
+        <a className="skip-link" href="#main-content">{accessibility('skipToContent')}</a>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

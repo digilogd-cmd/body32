@@ -1,7 +1,7 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
-import {useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 import {Button} from '@/components/ui/button';
 import {ELEMENT_KEYS, type Body32Result} from '@/domain/algorithm/types';
@@ -10,6 +10,7 @@ import {getGuardianType} from '@/domain/guardian/registry';
 import {Link} from '@/i18n/navigation';
 import type {AppLocale} from '@/i18n/routing';
 import {downloadPassport, type PassportFormat, type PassportRenderData} from '@/lib/passport/renderer';
+import {shareResult, type ShareResultStatus} from '@/lib/share/share-result';
 
 export interface ResultExperienceProps {
   locale: AppLocale;
@@ -19,7 +20,14 @@ export interface ResultExperienceProps {
 
 export function ResultExperience({locale, result, onRestart}: ResultExperienceProps) {
   const t = useTranslations('Result');
+  const shareT = useTranslations('Share');
   const [downloadState, setDownloadState] = useState<'idle' | 'working' | 'saved' | 'error'>('idle');
+  const [shareState, setShareState] = useState<ShareResultStatus | 'idle'>('idle');
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    titleRef.current?.focus();
+  }, []);
+
   const guardian = getGuardianType(result.stableTypeId);
   if (!guardian) return null;
 
@@ -51,8 +59,18 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
     }
   }
 
+  async function shareGuardian() {
+    setShareState('idle');
+    const status = await shareResult({
+      title: shareT('title'),
+      text: shareT('text', {name, number: typeNumber, summary: rhythm.summary[locale]}),
+      url: window.location.href
+    });
+    setShareState(status);
+  }
+
   return (
-    <main className={`result-shell result-theme--${result.rhythm.toLowerCase()}`}>
+    <main className={`result-shell result-theme--${result.rhythm.toLowerCase()}`} id="main-content">
       <header className="result-header">
         <Link className="wordmark wordmark--inverse" href="/">BODY<span>32</span></Link>
         <span>{t('typeNumber', {number: typeNumber})}</span>
@@ -65,7 +83,7 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
         </div>
         <div className="result-identity">
           <p className="result-kicker">{result.rhythm} · {result.archetype}</p>
-          <h1 id="result-title">{name}</h1>
+          <h1 id="result-title" ref={titleRef} tabIndex={-1}>{name}</h1>
           <p className="result-archetype-line">{archetype[locale]}</p>
           <p className="result-summary">{rhythm.summary[locale]}</p>
           <div className="result-tags">
@@ -140,9 +158,13 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
           <div className="passport-actions">
             <Button disabled={downloadState === 'working'} onClick={() => savePassport('square')} variant="secondary">{t('passport.saveSquare')}</Button>
             <Button disabled={downloadState === 'working'} onClick={() => savePassport('story')} variant="secondary">{t('passport.saveStory')}</Button>
+            <Button onClick={shareGuardian} variant="secondary">{shareT('button')}</Button>
           </div>
           <p aria-live="polite" className={`passport-status passport-status--${downloadState}`} role="status">
             {downloadState === 'working' ? t('passport.working') : downloadState === 'saved' ? t('passport.saved') : downloadState === 'error' ? t('passport.error') : ''}
+          </p>
+          <p aria-live="polite" className={`passport-status passport-status--${shareState}`} role="status">
+            {shareState === 'shared' ? shareT('shared') : shareState === 'copied' ? shareT('copied') : shareState === 'error' ? shareT('error') : ''}
           </p>
         </div>
         <div className="passport-mini" aria-label={t('passport.previewLabel', {name})} role="img">

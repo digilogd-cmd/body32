@@ -17,7 +17,7 @@ export default async function LocalePage({params}: LocalePageProps) {
   const t = await getTranslations('Landing');
 
   return (
-    <main>
+    <main id="main-content">
       <header className="site-header">
         <Link className="wordmark" href="/" aria-label="BODY32 home">BODY<span>32</span></Link>
         <div className="header-actions">

@@ -1,4 +1,6 @@
 {
+  "Accessibility": {"skipToContent": "본문으로 바로가기"},
+  "Share": {"title": "나의 BODY32 결과", "button": "결과 공유하기", "text": "나의 BODY32는 TYPE {number}, {name}입니다. {summary}\n\nBODY32는 의료 진단이 아닌 웰니스 자기 탐색 콘텐츠입니다.", "shared": "공유 창으로 결과를 보냈습니다.", "copied": "결과 요약을 클립보드에 복사했습니다.", "error": "공유하지 못했습니다. 브라우저 권한을 확인하고 다시 시도해 주세요."},
   "Metadata": {
     "title": "BODY32 | 나의 웰니스 성향 발견하기",
     "description": "32가지 웰니스 성향 중 나의 유형을 발견하고, Guardian과 BODY32 Passport를 만나보세요."

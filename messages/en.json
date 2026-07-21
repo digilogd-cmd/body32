@@ -1,4 +1,6 @@
 {
+  "Accessibility": {"skipToContent": "Skip to main content"},
+  "Share": {"title": "My BODY32 result", "button": "Share my result", "text": "My BODY32 is TYPE {number}, {name}. {summary}\n\nBODY32 is wellness self-discovery content, not a medical diagnosis.", "shared": "Your result was sent to the share sheet.", "copied": "Your result summary was copied to the clipboard.", "error": "We could not share the result. Check browser permissions and try again."},
   "Metadata": {
     "title": "BODY32 | Discover Your Wellness Personality",
     "description": "Discover your type among 32 wellness identities and meet your Guardian with a personal BODY32 Passport."

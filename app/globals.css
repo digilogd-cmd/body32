@@ -231,6 +231,9 @@ h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); font-weight: 620; letter-s
 .result-story { display: grid; gap: var(--space-12); }
 .story-grid { display: grid; gap: var(--space-5); }
 .story-grid article { padding: var(--space-8); border-radius: var(--radius-xl); background: var(--color-bg-surface-subtle); }
+.skip-link { position: fixed; z-index: 1000; top: var(--space-3); left: var(--space-3); padding: var(--space-3) var(--space-5); border-radius: var(--radius-full); background: var(--color-bg-inverse); color: var(--color-text-inverse); transform: translateY(calc(-100% - var(--space-5))); transition: transform var(--duration-fast) ease; }
+.skip-link:focus { transform: translateY(0); }
+[tabindex="-1"]:focus { outline: none; }
 .story-grid article > span { color: var(--result-accent); font-family: Georgia, serif; }
 .story-grid h3 { margin: var(--space-12) 0 var(--space-4); font-size: 1rem; }
 .story-grid p { margin: 0; color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.7; }

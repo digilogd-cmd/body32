@@ -1,7 +1,7 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
-import {useMemo, useState} from 'react';
+import {useEffect, useMemo, useRef, useState} from 'react';
 
 import {Button} from '@/components/ui/button';
 import {Progress} from '@/components/ui/progress';
@@ -29,11 +29,16 @@ export function QuizExperience({locale, questions}: QuizExperienceProps) {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, LikertAnswer>>({});
   const [result, setResult] = useState<Body32Result | null>(null);
+  const questionTitleRef = useRef<HTMLHeadingElement>(null);
 
   const question = questions[index];
   const selected = question ? answers[question.id] : undefined;
   const answeredCount = useMemo(() => Object.keys(answers).length, [answers]);
   const progress = questions.length ? (answeredCount / questions.length) * 100 : 0;
+
+  useEffect(() => {
+    if (stage === 'questions') questionTitleRef.current?.focus();
+  }, [index, stage]);
 
   function chooseAnswer(value: LikertAnswer) {
     if (!question) return;
@@ -59,7 +64,7 @@ export function QuizExperience({locale, questions}: QuizExperienceProps) {
 
   if (stage === 'intro') {
     return (
-      <main className="quiz-shell">
+      <main className="quiz-shell" id="main-content">
         <section className="quiz-intro" aria-labelledby="quiz-intro-title">
           <Link className="wordmark" href="/">BODY<span>32</span></Link>
           <div className="quiz-intro-copy">
@@ -89,7 +94,7 @@ export function QuizExperience({locale, questions}: QuizExperienceProps) {
   if (!question) return null;
 
   return (
-    <main className="quiz-shell">
+    <main className="quiz-shell" id="main-content">
       <section className="quiz-panel" aria-labelledby="question-title">
         <header className="quiz-header">
           <Link className="wordmark" href="/">BODY<span>32</span></Link>
@@ -98,7 +103,7 @@ export function QuizExperience({locale, questions}: QuizExperienceProps) {
         <Progress value={progress} label={t('progress', {current: index + 1, total: questions.length})} />
         <div className="question-content">
           <p className="eyebrow">{t('questionEyebrow', {current: index + 1})}</p>
-          <h1 id="question-title">{question.prompt}</h1>
+          <h1 id="question-title" ref={questionTitleRef} tabIndex={-1}>{question.prompt}</h1>
           <fieldset className="likert-fieldset">
             <legend className="sr-only">{t('answerLegend')}</legend>
             <div className="likert-scale">
