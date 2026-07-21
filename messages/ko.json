@@ -1,0 +1,24 @@
+{
+  "Metadata": {
+    "title": "BODY32",
+    "description": "동양 철학에서 영감을 받은 웰니스 성향을 발견해보세요."
+  },
+  "Foundation": {
+    "eyebrow": "BODY32 · FOUNDATION",
+    "title": "Decode Your Body.\nBalance Your Life.",
+    "description": "동양 철학에서 영감을 받은 웰니스 성향 경험을 정석대로 구축하고 있습니다.",
+    "status": "애플리케이션 기반 준비 완료",
+    "progressLabel": "제품 구축 진행률",
+    "checks": {
+      "specification": "제품 명세를 저장소에서 버전으로 관리합니다.",
+      "tokens": "모든 디자인 값은 의미 기반 토큰을 사용합니다.",
+      "domain": "진단 알고리즘은 화면 코드와 독립적으로 작동합니다.",
+      "global": "한국어와 영어가 하나의 제품 체계를 공유합니다."
+    }
+  },
+  "Language": {
+    "label": "언어 선택",
+    "ko": "한국어",
+    "en": "English"
+  }
+}

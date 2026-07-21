@@ -1,0 +1,24 @@
+{
+  "Metadata": {
+    "title": "BODY32",
+    "description": "Discover a wellness personality inspired by Eastern philosophy."
+  },
+  "Foundation": {
+    "eyebrow": "BODY32 · FOUNDATION",
+    "title": "Decode Your Body.\nBalance Your Life.",
+    "description": "We are building a thoughtful wellness personality experience inspired by Eastern philosophy.",
+    "status": "Application foundation ready",
+    "progressLabel": "Product build progress",
+    "checks": {
+      "specification": "Product specifications are versioned in the repository.",
+      "tokens": "Every design value uses a semantic token.",
+      "domain": "Classification logic stays independent from interface code.",
+      "global": "Korean and English share one product system."
+    }
+  },
+  "Language": {
+    "label": "Choose language",
+    "ko": "한국어",
+    "en": "English"
+  }
+}

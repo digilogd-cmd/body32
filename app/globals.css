@@ -9,6 +9,9 @@
   --color-text-muted: #77716a;
   --color-border-subtle: #eae6df;
   --color-action-primary: #4f7a5a;
+  --color-action-tint: #eef5ef;
+  --color-action-pressed: #304f39;
+  --color-text-inverse: #ffffff;
   --color-focus: #233b5e;
 
   --space-1: 0.25rem;
@@ -75,6 +78,19 @@ textarea {
   box-shadow: var(--shadow-1);
 }
 
+.card {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-surface);
+}
+
+.foundation-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
 .eyebrow {
   margin: 0 0 var(--space-4);
   color: var(--color-action-primary);
@@ -91,6 +107,81 @@ h1 {
   letter-spacing: -0.045em;
   line-height: 1.08;
 }
+
+h1 span {
+  display: block;
+}
+
+.language-switcher {
+  display: inline-flex;
+  padding: var(--space-1);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 999px;
+  background: var(--color-bg-surface-subtle);
+}
+
+.language-switcher a {
+  min-height: 2.25rem;
+  padding: 0 var(--space-3);
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 2.25rem;
+  text-decoration: none;
+}
+
+.language-switcher a[aria-current='page'] {
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  box-shadow: 0 0.125rem 0.5rem rgb(38 38 38 / 8%);
+}
+
+.progress-group {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-8) 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.progress-track {
+  height: 0.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--color-border-subtle);
+}
+
+.progress-value {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-action-primary);
+  transition: width var(--duration-base) ease-out;
+}
+
+.button {
+  min-width: 2.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-weight: 650;
+  cursor: pointer;
+  transition: background-color var(--duration-fast), border-color var(--duration-fast), color var(--duration-fast);
+}
+
+.button--md { min-height: 3rem; padding: 0 var(--space-5); }
+.button--lg { min-height: 3.5rem; padding: 0 var(--space-6); }
+.button--primary { background: var(--color-action-primary); color: var(--color-text-inverse); }
+.button--secondary { border-color: var(--color-border-subtle); background: var(--color-bg-surface); color: var(--color-text-primary); }
+.button--tertiary { background: transparent; color: var(--color-text-primary); }
+.button:disabled { cursor: not-allowed; opacity: 0.55; }
 
 .lede {
   max-width: 36rem;
@@ -133,8 +224,8 @@ h1 {
   padding: 0 var(--space-4);
   margin: 0;
   border-radius: 999px;
-  background: #eef5ef;
-  color: #304f39;
+  background: var(--color-action-tint);
+  color: var(--color-action-pressed);
   font-size: 0.875rem;
   font-weight: 600;
 }
