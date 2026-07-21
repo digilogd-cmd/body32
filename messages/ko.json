@@ -1,24 +1,53 @@
 {
   "Metadata": {
-    "title": "BODY32",
-    "description": "동양 철학에서 영감을 받은 웰니스 성향을 발견해보세요."
+    "title": "BODY32 | 나의 웰니스 성향 발견하기",
+    "description": "32가지 웰니스 성향 중 나의 유형을 발견하고, Guardian과 BODY32 Passport를 만나보세요."
   },
-  "Foundation": {
-    "eyebrow": "BODY32 · FOUNDATION",
-    "title": "Decode Your Body.\nBalance Your Life.",
-    "description": "동양 철학에서 영감을 받은 웰니스 성향 경험을 정석대로 구축하고 있습니다.",
-    "status": "애플리케이션 기반 준비 완료",
-    "progressLabel": "제품 구축 진행률",
-    "checks": {
-      "specification": "제품 명세를 저장소에서 버전으로 관리합니다.",
-      "tokens": "모든 디자인 값은 의미 기반 토큰을 사용합니다.",
-      "domain": "진단 알고리즘은 화면 코드와 독립적으로 작동합니다.",
-      "global": "한국어와 영어가 하나의 제품 체계를 공유합니다."
-    }
+  "Landing": {
+    "headerNote": "K-Wellness Personality",
+    "eyebrow": "32 WAYS TO FIND YOUR BALANCE",
+    "title": "몸의 리듬을 읽고, <accent>나만의 균형</accent>을 발견하세요.",
+    "description": "일상의 에너지와 회복 패턴을 돌아보는 짧은 여정. 20개의 질문을 통해 32가지 BODY32 유형 중 당신의 Guardian을 만납니다.",
+    "primaryCta": "나의 BODY32 찾기",
+    "secondaryCta": "어떻게 진행되나요?",
+    "trustLabel": "진단 안내",
+    "time": "약 3분",
+    "questions": "20개 질문",
+    "noSignup": "가입 없이 시작",
+    "visualLabel": "32가지 유형을 상징하는 오행 궤도",
+    "visualOverline": "YOUR TYPE AMONG",
+    "visualCaption": "GUARDIANS",
+    "typesLabel": "32가지 BODY32 유형",
+    "typesIntro": "4가지 리듬",
+    "typesOutro": "32가지 고유한 정체성",
+    "how": {
+      "eyebrow": "YOUR JOURNEY",
+      "title": "답하고, 이해하고, 간직하세요.",
+      "description": "복잡한 검사 대신 나의 일상을 차분히 돌아보는 경험을 만들었습니다.",
+      "steps": {
+        "reflect": {"title": "나의 리듬 돌아보기", "description": "에너지, 회복, 환경, 생활 패턴에 관한 20개의 쉬운 질문에 답합니다."},
+        "decode": {"title": "균형의 언어로 해석하기", "description": "답변을 투명한 규칙으로 분석해 네 가지 리듬과 오행의 경향을 살펴봅니다."},
+        "meet": {"title": "나의 Guardian 만나기", "description": "32가지 유형 중 나의 정체성을 발견하고 개인 BODY32 Passport를 받습니다."}
+      }
+    },
+    "guardian": {
+      "eyebrow": "MORE THAN A RESULT",
+      "title": "결과는 숫자가 아니라, 기억하고 싶은 정체성이 됩니다.",
+      "description": "각 BODY32 유형에는 고유한 Guardian과 균형 이야기, 그리고 저장하고 공유할 수 있는 Passport가 함께합니다.",
+      "artifactsLabel": "결과 구성"
+    },
+    "principles": {
+      "eyebrow": "BUILT WITH CARE",
+      "title": "호기심은 가볍게, 당신의 정보는 신중하게.",
+      "items": {
+        "private": {"title": "가입 없이", "description": "핵심 경험을 위해 계정이나 이메일을 요구하지 않습니다."},
+        "transparent": {"title": "투명한 해석", "description": "어떤 답변이 결과에 반영되는지 이해할 수 있는 규칙을 사용합니다."},
+        "inclusive": {"title": "판단 없는 언어", "description": "좋고 나쁜 몸을 나누지 않고, 모든 유형의 고유한 강점을 존중합니다."}
+      },
+      "note": "BODY32는 자기 탐색을 위한 웰니스 경험이며 의료 진단이나 전문적인 의학적 조언을 대신하지 않습니다."
+    },
+    "final": {"title": "당신의 몸은 어떤 이야기를 들려주나요?", "cta": "지금 시작하기"},
+    "footer": "Decode Your Body. Balance Your Life."
   },
-  "Language": {
-    "label": "언어 선택",
-    "ko": "한국어",
-    "en": "English"
-  }
+  "Language": {"label": "언어 선택", "ko": "한국어", "en": "English"}
 }

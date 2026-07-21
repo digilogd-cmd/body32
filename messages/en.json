@@ -1,24 +1,53 @@
 {
   "Metadata": {
-    "title": "BODY32",
-    "description": "Discover a wellness personality inspired by Eastern philosophy."
+    "title": "BODY32 | Discover Your Wellness Personality",
+    "description": "Discover your type among 32 wellness identities and meet your Guardian with a personal BODY32 Passport."
   },
-  "Foundation": {
-    "eyebrow": "BODY32 · FOUNDATION",
-    "title": "Decode Your Body.\nBalance Your Life.",
-    "description": "We are building a thoughtful wellness personality experience inspired by Eastern philosophy.",
-    "status": "Application foundation ready",
-    "progressLabel": "Product build progress",
-    "checks": {
-      "specification": "Product specifications are versioned in the repository.",
-      "tokens": "Every design value uses a semantic token.",
-      "domain": "Classification logic stays independent from interface code.",
-      "global": "Korean and English share one product system."
-    }
+  "Landing": {
+    "headerNote": "K-Wellness Personality",
+    "eyebrow": "32 WAYS TO FIND YOUR BALANCE",
+    "title": "Read your rhythm. Discover <accent>your kind of balance.</accent>",
+    "description": "A short reflection on your everyday energy and recovery patterns. Answer 20 questions to meet your Guardian among 32 BODY32 identities.",
+    "primaryCta": "Find my BODY32",
+    "secondaryCta": "How does it work?",
+    "trustLabel": "Experience details",
+    "time": "About 3 min",
+    "questions": "20 questions",
+    "noSignup": "No sign-up",
+    "visualLabel": "Five-element orbit representing 32 identities",
+    "visualOverline": "YOUR TYPE AMONG",
+    "visualCaption": "GUARDIANS",
+    "typesLabel": "32 BODY32 identities",
+    "typesIntro": "4 rhythms",
+    "typesOutro": "32 distinct identities",
+    "how": {
+      "eyebrow": "YOUR JOURNEY",
+      "title": "Reflect, understand, and keep it.",
+      "description": "A calm look at your everyday patterns—not another complicated assessment.",
+      "steps": {
+        "reflect": {"title": "Reflect on your rhythm", "description": "Answer 20 approachable questions about energy, recovery, environment, and routine."},
+        "decode": {"title": "Decode your balance", "description": "Transparent rules translate your answers into four rhythms and five-element tendencies."},
+        "meet": {"title": "Meet your Guardian", "description": "Discover your identity among 32 types and receive your personal BODY32 Passport."}
+      }
+    },
+    "guardian": {
+      "eyebrow": "MORE THAN A RESULT",
+      "title": "Not just a score. An identity worth remembering.",
+      "description": "Every BODY32 type comes with a distinct Guardian, a story about balance, and a Passport made to save and share.",
+      "artifactsLabel": "Your result includes"
+    },
+    "principles": {
+      "eyebrow": "BUILT WITH CARE",
+      "title": "Light on curiosity. Careful with your information.",
+      "items": {
+        "private": {"title": "No account required", "description": "The core experience never asks for an account or email address."},
+        "transparent": {"title": "Transparent by design", "description": "Understandable rules show how your answers contribute to your result."},
+        "inclusive": {"title": "Language without judgment", "description": "There is no good or bad body. Every type has strengths worth recognizing."}
+      },
+      "note": "BODY32 is a wellness self-discovery experience, not a medical diagnosis or a substitute for professional healthcare advice."
+    },
+    "final": {"title": "What story does your body tell?", "cta": "Begin the journey"},
+    "footer": "Decode Your Body. Balance Your Life."
   },
-  "Language": {
-    "label": "Choose language",
-    "ko": "한국어",
-    "en": "English"
-  }
+  "Language": {"label": "Choose language", "ko": "한국어", "en": "English"}
 }

@@ -22,7 +22,7 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-005 | Web application foundation and quality tooling | Complete |
 | TASK-006 | Versioned algorithm engine and type registry | Complete |
 | TASK-007 | Korean/English routing and shared UI primitives | Complete |
-| TASK-008 | Premium landing page and visual verification | Planned |
+| TASK-008 | Premium landing page and visual verification | Complete |
 | TASK-009+ | Feature implementation, QA, and deployment | Planned |
 
 ## Required task sections
