@@ -49,5 +49,37 @@
     "final": {"title": "당신의 몸은 어떤 이야기를 들려주나요?", "cta": "지금 시작하기"},
     "footer": "Decode Your Body. Balance Your Life."
   },
+  "Quiz": {
+    "intro": {
+      "eyebrow": "BEFORE WE BEGIN",
+      "title": "지금의 나와 가장 가까운 모습을 떠올려보세요.",
+      "description": "정답은 없습니다. 최근 2~4주의 평소 모습을 기준으로, 오래 고민하기보다 자연스럽게 답해주세요.",
+      "questions": "개의 질문",
+      "minutes": "분 내외",
+      "personalData": "개 필수 개인정보",
+      "start": "20문항 시작하기",
+      "back": "홈으로 돌아가기",
+      "note": "답변은 이 기기에서 결과를 계산하는 데만 사용되며, 이번 버전에서는 서버에 저장하지 않습니다."
+    },
+    "answered": "{count}개 응답 완료",
+    "progress": "질문 {current} / {total}",
+    "questionEyebrow": "QUESTION {current}",
+    "answerLegend": "나와 가까운 정도를 선택하세요",
+    "answers": {"1": "전혀 그렇지 않다", "2": "그렇지 않은 편이다", "3": "반반이다", "4": "그런 편이다", "5": "매우 그렇다"},
+    "back": "이전",
+    "continue": "다음",
+    "finish": "결과 분석하기",
+    "complete": {
+      "eyebrow": "YOUR PATTERN IS READY",
+      "title": "당신의 BODY32 패턴을 찾았습니다.",
+      "description": "20개의 답변을 동일한 규칙으로 계산해 가장 가까운 리듬과 Guardian 패턴을 찾았습니다.",
+      "rhythm": "Energy Rhythm",
+      "guardian": "Guardian",
+      "pattern": "패턴 선명도",
+      "nextNote": "Guardian 이야기와 Balance, Passport가 담긴 전체 결과 화면은 다음 단계에서 연결됩니다.",
+      "restart": "다시 답하기"
+    },
+    "confidence": {"high": "선명한 패턴", "medium": "비교적 뚜렷한 패턴", "low": "두 성향 사이의 섬세한 패턴"}
+  },
   "Language": {"label": "언어 선택", "ko": "한국어", "en": "English"}
 }

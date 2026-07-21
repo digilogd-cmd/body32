@@ -49,5 +49,37 @@
     "final": {"title": "What story does your body tell?", "cta": "Begin the journey"},
     "footer": "Decode Your Body. Balance Your Life."
   },
+  "Quiz": {
+    "intro": {
+      "eyebrow": "BEFORE WE BEGIN",
+      "title": "Think of the version of you that feels most familiar right now.",
+      "description": "There are no right answers. Reflect on your usual self over the past two to four weeks and choose what feels natural.",
+      "questions": "questions",
+      "minutes": "minutes",
+      "personalData": "required personal details",
+      "start": "Start 20 questions",
+      "back": "Back to home",
+      "note": "Your answers are used only to calculate the result on this device and are not stored on a server in this version."
+    },
+    "answered": "{count} answered",
+    "progress": "Question {current} of {total}",
+    "questionEyebrow": "QUESTION {current}",
+    "answerLegend": "Choose how closely this sounds like you",
+    "answers": {"1": "Not at all", "2": "Mostly not", "3": "In between", "4": "Mostly yes", "5": "Very much"},
+    "back": "Back",
+    "continue": "Continue",
+    "finish": "Analyze my result",
+    "complete": {
+      "eyebrow": "YOUR PATTERN IS READY",
+      "title": "We found your BODY32 pattern.",
+      "description": "The same transparent rules interpreted all 20 answers to find your closest rhythm and Guardian pattern.",
+      "rhythm": "Energy Rhythm",
+      "guardian": "Guardian",
+      "pattern": "Pattern clarity",
+      "nextNote": "Your full Guardian story, Balance, and Passport will connect in the next stage.",
+      "restart": "Answer again"
+    },
+    "confidence": {"high": "Clear pattern", "medium": "Fairly distinct pattern", "low": "A nuanced pattern between two tendencies"}
+  },
   "Language": {"label": "Choose language", "ko": "한국어", "en": "English"}
 }
