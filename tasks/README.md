@@ -24,7 +24,8 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-007 | Korean/English routing and shared UI primitives | Complete |
 | TASK-008 | Premium landing page and visual verification | Complete |
 | TASK-009 | Anonymous 20-question diagnostic flow | Complete |
-| TASK-010+ | Result, Passport, sharing, QA, and deployment | Planned |
+| TASK-010 | Guardian result and BODY32 Balance | Complete |
+| TASK-011+ | Passport, sharing, QA, and deployment | Planned |
 
 ## Required task sections
 

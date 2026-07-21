@@ -11,5 +11,5 @@ export default async function QuizPage({params}: QuizPageProps) {
   setRequestLocale(locale);
 
   const questions = QUESTIONS.map(({id, order, prompt}) => ({id, order, prompt: prompt[locale]}));
-  return <QuizExperience questions={questions} />;
+  return <QuizExperience locale={locale} questions={questions} />;
 }

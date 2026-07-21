@@ -37,7 +37,7 @@ afterEach(cleanup);
 
 describe('QuizExperience', () => {
   it('starts anonymously and requires an answer before continuing', () => {
-    render(<QuizExperience questions={questions} />);
+    render(<QuizExperience locale="en" questions={questions} />);
     fireEvent.click(screen.getByRole('button', {name: 'Start quiz'}));
 
     const continueButton = screen.getByRole('button', {name: 'Continue'});
@@ -47,7 +47,7 @@ describe('QuizExperience', () => {
   });
 
   it('preserves a response when moving back', () => {
-    render(<QuizExperience questions={questions} />);
+    render(<QuizExperience locale="en" questions={questions} />);
     fireEvent.click(screen.getByRole('button', {name: 'Start quiz'}));
     fireEvent.click(screen.getByRole('radio', {name: '5Very much'}));
     fireEvent.click(screen.getByRole('button', {name: 'Continue'}));
@@ -57,7 +57,7 @@ describe('QuizExperience', () => {
   });
 
   it('calculates a result only after all 20 answers', () => {
-    render(<QuizExperience questions={questions} />);
+    render(<QuizExperience locale="en" questions={questions} />);
     fireEvent.click(screen.getByRole('button', {name: 'Start quiz'}));
 
     questions.forEach((_, index) => {
@@ -65,6 +65,6 @@ describe('QuizExperience', () => {
       fireEvent.click(screen.getByRole('button', {name: index === questions.length - 1 ? 'Finish' : 'Continue'}));
     });
 
-    expect(screen.getByRole('heading', {name: 'Pattern found'})).toBeInTheDocument();
+    expect(screen.getByRole('heading', {name: 'Comet Dolphin'})).toBeInTheDocument();
   });
 });

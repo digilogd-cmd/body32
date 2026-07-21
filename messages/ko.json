@@ -81,5 +81,32 @@
     },
     "confidence": {"high": "선명한 패턴", "medium": "비교적 뚜렷한 패턴", "low": "두 성향 사이의 섬세한 패턴"}
   },
+  "Result": {
+    "typeNumber": "BODY32 TYPE {number}",
+    "guardianFallback": "{name} Guardian 엠블럼",
+    "confidence": "{value}",
+    "confidenceValue": {"high": "선명한 패턴", "medium": "비교적 뚜렷한 패턴", "low": "섬세한 경계 패턴"},
+    "dominantElement": "가장 두드러진 표현 · {element}",
+    "story": {"eyebrow": "YOUR GUARDIAN STORY", "strength": "당신이 가진 힘", "reflection": "균형을 위한 질문"},
+    "balance": {
+      "eyebrow": "YOUR BODY32 BALANCE",
+      "title": "다섯 가지 방식으로 읽은 당신의 균형",
+      "description": "같은 Guardian이라도 Balance는 서로 다를 수 있습니다. 점수는 좋고 나쁨이 아니라 지금 답변에서 드러난 상대적인 표현입니다.",
+      "note": "각 항목은 독립적인 0~100 표현 척도이며 합계가 100이 되도록 만든 비율이 아닙니다."
+    },
+    "balanceValue": "{element} 표현 {value}점",
+    "elements": {"wood": "Wood · 목", "fire": "Fire · 화", "earth": "Earth · 토", "metal": "Metal · 금", "water": "Water · 수"},
+    "elementMeanings": {"wood": "성장과 적응", "fire": "표현과 추진", "earth": "안정과 지속", "metal": "정리와 통찰", "water": "회복과 유연함"},
+    "why": {
+      "eyebrow": "WHY THIS RESULT",
+      "title": "답변이 만든 다섯 가지 성향",
+      "description": "BODY32는 AI의 추측이 아니라, 공개된 동일한 계산 규칙으로 20개 답변을 다섯 성향 축에 정리합니다."
+    },
+    "dimensions": {"activation": "시작 에너지", "adaptability": "적응 유연성", "steadiness": "지속 안정성", "reflection": "내면 관찰", "connection": "관계 감응"},
+    "passport": {"title": "이 결과를 나만의 Passport로", "description": "다음 단계에서는 Guardian과 Balance를 한 장의 이미지로 저장하고 공유할 수 있게 됩니다."},
+    "wellnessNote": "이 결과는 생활 성향을 돌아보기 위한 웰니스 콘텐츠이며 의료 진단이나 의학적 조언이 아닙니다.",
+    "restart": "다시 진단하기",
+    "home": "홈으로"
+  },
   "Language": {"label": "언어 선택", "ko": "한국어", "en": "English"}
 }

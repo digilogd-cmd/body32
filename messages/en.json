@@ -81,5 +81,32 @@
     },
     "confidence": {"high": "Clear pattern", "medium": "Fairly distinct pattern", "low": "A nuanced pattern between two tendencies"}
   },
+  "Result": {
+    "typeNumber": "BODY32 TYPE {number}",
+    "guardianFallback": "{name} Guardian emblem",
+    "confidence": "{value}",
+    "confidenceValue": {"high": "Clear pattern", "medium": "Fairly distinct pattern", "low": "Nuanced boundary pattern"},
+    "dominantElement": "Strongest expression · {element}",
+    "story": {"eyebrow": "YOUR GUARDIAN STORY", "strength": "A strength you carry", "reflection": "A question for balance"},
+    "balance": {
+      "eyebrow": "YOUR BODY32 BALANCE",
+      "title": "Your balance, read through five expressions",
+      "description": "Two people with the same Guardian can have different Balance profiles. These are relative expressions in your answers, not good-or-bad scores.",
+      "note": "Each item is an independent 0–100 expression scale. The five values are not percentages designed to total 100."
+    },
+    "balanceValue": "{element} expression {value}",
+    "elements": {"wood": "Wood", "fire": "Fire", "earth": "Earth", "metal": "Metal", "water": "Water"},
+    "elementMeanings": {"wood": "Growth and adaptation", "fire": "Expression and momentum", "earth": "Stability and continuity", "metal": "Clarity and insight", "water": "Recovery and flexibility"},
+    "why": {
+      "eyebrow": "WHY THIS RESULT",
+      "title": "Five tendencies shaped by your answers",
+      "description": "BODY32 does not rely on an AI guess. The same published calculation rules organize your 20 answers into five tendency dimensions."
+    },
+    "dimensions": {"activation": "Activation", "adaptability": "Adaptability", "steadiness": "Steadiness", "reflection": "Reflection", "connection": "Connection"},
+    "passport": {"title": "Turn this result into your Passport", "description": "The next stage will let you save and share your Guardian and Balance as a personal image."},
+    "wellnessNote": "This result is wellness content for lifestyle reflection, not a medical diagnosis or healthcare advice.",
+    "restart": "Take it again",
+    "home": "Back home"
+  },
   "Language": {"label": "Choose language", "ko": "한국어", "en": "English"}
 }

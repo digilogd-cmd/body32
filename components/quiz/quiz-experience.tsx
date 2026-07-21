@@ -5,22 +5,25 @@ import {useMemo, useState} from 'react';
 
 import {Button} from '@/components/ui/button';
 import {Progress} from '@/components/ui/progress';
+import {ResultExperience} from '@/components/result/result-experience';
 import {ALGORITHM_VERSION} from '@/domain/algorithm/config';
 import {calculateBody32Result} from '@/domain/algorithm/engine';
 import {QUESTION_SET_VERSION} from '@/domain/algorithm/questions';
 import type {Body32Result, LikertAnswer} from '@/domain/algorithm/types';
 import {Link} from '@/i18n/navigation';
+import type {AppLocale} from '@/i18n/routing';
 
 type QuizItem = {id: string; order: number; prompt: string};
 type QuizStage = 'intro' | 'questions' | 'complete';
 
 export interface QuizExperienceProps {
+  locale: AppLocale;
   questions: readonly QuizItem[];
 }
 
 const answerValues = [1, 2, 3, 4, 5] as const;
 
-export function QuizExperience({questions}: QuizExperienceProps) {
+export function QuizExperience({locale, questions}: QuizExperienceProps) {
   const t = useTranslations('Quiz');
   const [stage, setStage] = useState<QuizStage>('intro');
   const [index, setIndex] = useState(0);
@@ -80,23 +83,7 @@ export function QuizExperience({questions}: QuizExperienceProps) {
   }
 
   if (stage === 'complete' && result) {
-    return (
-      <main className="quiz-shell">
-        <section className="quiz-complete" aria-labelledby="quiz-complete-title">
-          <div className="completion-orbit" aria-hidden="true"><span>{result.stableTypeId.split('_').slice(1).join(' · ')}</span></div>
-          <p className="eyebrow">{t('complete.eyebrow')}</p>
-          <h1 id="quiz-complete-title">{t('complete.title')}</h1>
-          <p>{t('complete.description')}</p>
-          <dl className="result-preview">
-            <div><dt>{t('complete.rhythm')}</dt><dd>{result.rhythm}</dd></div>
-            <div><dt>{t('complete.guardian')}</dt><dd>{result.archetype}</dd></div>
-            <div><dt>{t('complete.pattern')}</dt><dd>{t(`confidence.${result.confidence}`)}</dd></div>
-          </dl>
-          <p className="quiz-disclaimer">{t('complete.nextNote')}</p>
-          <Button size="lg" onClick={() => {setStage('intro'); setIndex(0); setAnswers({}); setResult(null);}}>{t('complete.restart')}</Button>
-        </section>
-      </main>
-    );
+    return <ResultExperience locale={locale} result={result} onRestart={() => {setStage('intro'); setIndex(0); setAnswers({}); setResult(null);}} />;
   }
 
   if (!question) return null;
