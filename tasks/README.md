@@ -17,7 +17,7 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-000 | Project operating foundation | Complete |
 | TASK-001 | Brand guide and design token specification | Complete |
 | TASK-002 | Guardian taxonomy and Character Bible | Complete |
-| TASK-003 | Diagnostic algorithm and domain data model | Planned |
+| TASK-003 | Diagnostic algorithm and domain data model | Complete |
 | TASK-004 | Technical architecture, database, and API design | Planned |
 | TASK-005 | Web application foundation and quality tooling | Planned |
 | TASK-006+ | Feature implementation, QA, and deployment | Planned |
