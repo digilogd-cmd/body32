@@ -105,6 +105,8 @@
     "confidence": {"high": "선명한 패턴", "medium": "비교적 뚜렷한 패턴", "low": "두 성향 사이의 섬세한 패턴"}
   },
   "Result": {
+    "bodyProfile": {"eyebrow": "YOUR CURRENT BODY PATTERN", "defaultOwner": "당신의", "title": "{owner} Body Profile", "snapshotNote": "최근 2~4주 자기 응답을 바탕으로 한 현재의 스냅샷이며 의료·건강·체력 점수가 아닙니다.", "score": "BODY SCORE", "scoreLabel": "Body Score 스냅샷 100점 중 {score}점"},
+    "signals": {"eyebrow": "FIVE BODY SIGNALS", "title": "지금 답변에서 보이는 다섯 신호", "description": "다섯 신호가 Guardian에 실제 의미를 더합니다. 높다고 항상 좋은 것이 아니라 현재 답변이 향하는 방향을 보여줍니다.", "value": "{name} 표현 {score}", "note": "BODY32가 정의한 자기 응답 신호이며 임상 척도나 의료 진단이 아닙니다."},
     "typeNumber": "BODY32 TYPE {number}",
     "guardianFallback": "{name} Guardian 엠블럼",
     "confidence": "{value}",
@@ -123,8 +125,11 @@
     "why": {
       "eyebrow": "WHY THIS RESULT",
       "title": "답변이 만든 다섯 가지 성향",
-      "description": "BODY32는 AI의 추측이 아니라, 공개된 동일한 계산 규칙으로 20개 답변을 다섯 성향 축에 정리합니다."
+      "description": "BODY32는 AI의 추측이 아닙니다. 버전이 고정된 동일한 규칙으로 20개 응답을 정리하고 Rhythm과 Guardian에 연결합니다.",
+      "strongest": "가장 뚜렷한 신호", "quietest": "조용한 신호", "version": "계산 버전"
     },
+    "personality": {"eyebrow": "OPTIONAL PERSONALITY CONTEXT", "structured": "입력한 {mbti} 맥락에서는 일정이 분명한 실험이 시작하기 편할 수 있습니다. 계획은 초안으로 두고 몸의 신호가 다르면 조정하세요.", "flexible": "입력한 {mbti} 맥락에서는 하나의 고정 계획보다 작은 선택지가 편할 수 있습니다. 한 가지를 고른 뒤 관찰 기간만은 일정하게 유지해보세요.", "note": "MBTI는 Body Signal, Rhythm, Guardian, Body Score 계산에 영향을 주지 않았으며 습관 설명 방식에만 사용했습니다."},
+    "practice": {"eyebrow": "FROM INSIGHT TO ACTION", "title": "내 패턴을 시험하는 작은 방법", "description": "처방이 아닌 가벼운 관찰로 사용하세요. 도움이 되는 것은 남기고 맞지 않는 것은 멈춰도 됩니다.", "items": {"meal": "식사 리듬", "movement": "움직임", "recovery": "회복", "stress": "스트레스 리셋"}, "experimentTitle": "이번 주에 해볼 한 가지", "note": "일반적인 웰니스 교육 정보이며 의료·영양·치료 조언이 아닙니다."},
     "dimensions": {"energy": "에너지", "recovery": "회복", "thermalComfort": "온냉 편안함", "digestiveRhythm": "소화 리듬", "stressFlexibility": "스트레스 유연성"},
     "passport": {
       "title": "이 결과를 나만의 Passport로",

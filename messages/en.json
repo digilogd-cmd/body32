@@ -105,6 +105,8 @@
     "confidence": {"high": "Clear pattern", "medium": "Fairly distinct pattern", "low": "A nuanced pattern between two tendencies"}
   },
   "Result": {
+    "bodyProfile": {"eyebrow": "YOUR CURRENT BODY PATTERN", "defaultOwner": "Your", "title": "{owner} Body Profile", "snapshotNote": "A self-reported snapshot from the past two to four weeks — not a medical or fitness score.", "score": "BODY SCORE", "scoreLabel": "Body Score snapshot {score} out of 100"},
+    "signals": {"eyebrow": "FIVE BODY SIGNALS", "title": "What your answers are showing now", "description": "Five independent signals make the Guardian useful. Higher is not always better; each value describes a current direction in your answers.", "value": "{name} expression {score}", "note": "These are BODY32 self-report signals, not validated clinical scales or diagnoses."},
     "typeNumber": "BODY32 TYPE {number}",
     "guardianFallback": "{name} Guardian emblem",
     "confidence": "{value}",
@@ -123,8 +125,11 @@
     "why": {
       "eyebrow": "WHY THIS RESULT",
       "title": "Five tendencies shaped by your answers",
-      "description": "BODY32 does not rely on an AI guess. The same published calculation rules organize your 20 answers into five tendency dimensions."
+      "description": "BODY32 does not rely on an AI guess. The same versioned rules organize all 20 answers, then map the pattern to a Rhythm and Guardian.",
+      "strongest": "Most expressed signals", "quietest": "Quieter signals", "version": "Calculation versions"
     },
+    "personality": {"eyebrow": "OPTIONAL PERSONALITY CONTEXT", "structured": "Because you entered {mbti}, clearly scheduled experiments may feel easier to start. Treat the plan as a draft and adjust it when your body signals disagree.", "flexible": "Because you entered {mbti}, a menu of small options may feel easier than one fixed plan. Choose one experiment and keep the observation window consistent.", "note": "MBTI did not affect your Body Signals, Rhythm, Guardian, or Body Score. It only changes how habit guidance is framed."},
+    "practice": {"eyebrow": "FROM INSIGHT TO ACTION", "title": "Small ways to test your pattern", "description": "Use these as gentle observations, not prescriptions. Keep what helps and stop what does not feel right.", "items": {"meal": "Meal rhythm", "movement": "Movement", "recovery": "Recovery", "stress": "Stress reset"}, "experimentTitle": "One experiment for this week", "note": "General wellness education only. This is not medical, nutritional, or treatment advice."},
     "dimensions": {"energy": "Energy", "recovery": "Recovery", "thermalComfort": "Thermal comfort", "digestiveRhythm": "Digestive rhythm", "stressFlexibility": "Stress flexibility"},
     "passport": {
       "title": "Turn this result into your Passport",
