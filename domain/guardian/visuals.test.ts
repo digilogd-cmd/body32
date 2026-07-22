@@ -20,6 +20,14 @@ describe('Guardian visual system', () => {
     expect(getGuardianPortrait('DEER', 'WEAVE')?.src).toBe('/characters/deer-rhythms-v1.png');
     expect(getGuardianPortrait('CRANE', 'IGNITE')?.src).toBe('/characters/crane-rhythms-v1.png');
     expect(getGuardianPortrait('BEAR', 'GROUND')?.src).toBe('/characters/bear-rhythms-v1.png');
-    expect(getGuardianPortrait('WOLF', 'IGNITE')).toBeUndefined();
+    expect(getGuardianPortrait('WOLF', 'IGNITE')?.src).toBe('/characters/wolf-rhythms-v1.png');
+    expect(getGuardianPortrait('OWL', 'WEAVE')?.src).toBe('/characters/owl-rhythms-v1.png');
+    expect(getGuardianPortrait('DOLPHIN', 'REFLECT')?.src).toBe('/characters/dolphin-rhythms-v1.png');
+  });
+
+  it('has a production portrait for every Guardian combination', () => {
+    for (const archetype of ARCHETYPE_CODES) {
+      for (const rhythm of RHYTHM_CODES) expect(getGuardianPortrait(archetype, rhythm)).toBeDefined();
+    }
   });
 });

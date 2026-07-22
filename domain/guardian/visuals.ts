@@ -37,7 +37,10 @@ const portraitSheets: Partial<Record<ArchetypeCode, string>> = {
   FOX: '/characters/fox-rhythms-v1.png',
   DEER: '/characters/deer-rhythms-v1.png',
   CRANE: '/characters/crane-rhythms-v1.png',
-  BEAR: '/characters/bear-rhythms-v1.png'
+  BEAR: '/characters/bear-rhythms-v1.png',
+  WOLF: '/characters/wolf-rhythms-v1.png',
+  OWL: '/characters/owl-rhythms-v1.png',
+  DOLPHIN: '/characters/dolphin-rhythms-v1.png'
 };
 
 export function getGuardianPortrait(archetype: ArchetypeCode, rhythm: RhythmCode): GuardianPortraitAsset | undefined {
