@@ -4,9 +4,9 @@
 | --- | --- |
 | Product | BODY32 |
 | Tagline | Decode Your Body. Balance Your Life. |
-| Document version | v0.1 |
-| Status | Draft — Foundation |
-| Last updated | 2026-07-21 |
+| Document version | v0.2 |
+| Status | Implemented MVP baseline — pre-release review |
+| Last updated | 2026-07-22 |
 | Primary market | Global (KR/EN launch) |
 | Repository | `digilogd-cmd/body32` |
 
@@ -639,20 +639,27 @@ The Passport must support mobile display, accessible HTML, downloadable social f
 
 ---
 
-# Open Decisions for v0.2
+# Implemented MVP decisions in v0.2
+
+- The taxonomy is fixed at four Energy Rhythms multiplied by eight Guardian Archetypes.
+- The anonymous core experience uses 20 versioned questions and does not require profile data.
+- Blood type, MBTI, BMI, gender, age, height, and weight do not influence the v1 result.
+- The deterministic rules engine, not generative AI, calculates the Guardian and Balance.
+- Korean and English launch routes share the same content schema and algorithm version.
+- All 32 Guardian portraits, result guidance, Passport downloads, and privacy-safe sharing are implemented.
+- Answers remain in temporary React state and are not persisted or transmitted in the current version.
+
+# Open Decisions after v0.2
 
 The following decisions are intentionally not finalized in v0.1:
 
-1. Final 32-type taxonomy: `4 constitutions × 8 energy groups` versus another defensible structure
-2. Whether blood type and MBTI influence the core type or appear only as optional comparison insights
-3. Required versus optional profile fields, particularly email, gender, height, and weight
-4. Final launch analytics and consent platform
-5. Guardian naming system and cultural terminology
-6. Passport identifier and QR/link behavior
-7. Recommendation scope for the MVP
-8. Authentication and anonymous result-recovery strategy
-9. Final font licensing and typography selection
-10. Commercial model and rules for any future affiliate content
+1. Final launch analytics and consent platform, if analytics is introduced
+2. Native editorial review of all Korean and English Guardian names
+3. Passport identifier and QR/link behavior
+4. Recommendation scope after the anonymous core launch
+5. Authentication and opt-in result recovery strategy
+6. Final font licensing and typography selection
+7. Commercial model and rules for any future affiliate content
 
 These items must be resolved through the relevant specification sections before implementation.
 
