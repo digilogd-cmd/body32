@@ -215,6 +215,9 @@ h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); font-weight: 620; letter-s
 .result-header { display: flex; min-height: 5.5rem; align-items: center; justify-content: space-between; color: var(--color-text-muted); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; }
 .wordmark--inverse { color: var(--color-text-primary); }
 .result-hero { display: grid; min-height: calc(100svh - 5.5rem); align-items: center; gap: clamp(var(--space-8), 7vw, var(--space-20)); padding-block: var(--space-12) var(--space-20); }
+.guardian-portrait { position: relative; width: min(78vw, 31rem); aspect-ratio: 1; justify-self: center; overflow: hidden; border: 1px solid color-mix(in srgb, var(--result-accent) 42%, transparent); border-radius: 46% 54% 51% 49%; background-color: var(--color-bg-surface); background-repeat: no-repeat; background-size: 400% auto; box-shadow: var(--shadow-2); }
+.guardian-portrait > small { position: absolute; right: 16%; bottom: 15%; display: grid; width: 3.5rem; aspect-ratio: 1; place-items: center; border-radius: 50%; background: var(--color-bg-inverse); color: var(--color-text-inverse); font-size: 0.8rem; font-weight: 700; }
+.guardian-portrait--compact { width: 5.25rem; box-shadow: none; }
 .guardian-mark { position: relative; display: grid; width: min(78vw, 31rem); aspect-ratio: 1; place-items: center; justify-self: center; overflow: hidden; border: 1px solid color-mix(in srgb, var(--result-accent) 42%, transparent); border-radius: 46% 54% 51% 49%; background: var(--color-bg-surface); box-shadow: var(--shadow-2); }
 .guardian-mark__field { position: absolute; inset: 8%; border: 1px solid color-mix(in srgb, var(--result-accent) 30%, transparent); border-radius: 50%; }
 .guardian-mark__field::before, .guardian-mark__field::after { position: absolute; inset: 17%; border: 1px solid color-mix(in srgb, var(--result-accent) 30%, transparent); border-radius: 50%; content: ''; }

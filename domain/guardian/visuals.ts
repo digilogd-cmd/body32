@@ -24,3 +24,15 @@ export const RHYTHM_VISUAL_CUES: Readonly<Record<RhythmCode, string>> = {
   GROUND: 'arches',
   REFLECT: 'facets'
 };
+
+export interface GuardianPortraitAsset {
+  readonly src: string;
+  readonly sheetPosition: number;
+}
+
+const tigerSheetPositions: Readonly<Record<RhythmCode, number>> = {IGNITE: 0, WEAVE: 1, GROUND: 2, REFLECT: 3};
+
+export function getGuardianPortrait(archetype: ArchetypeCode, rhythm: RhythmCode): GuardianPortraitAsset | undefined {
+  if (archetype !== 'TIGER') return undefined;
+  return {src: '/characters/tiger-rhythms-v1.png', sheetPosition: tigerSheetPositions[rhythm]};
+}

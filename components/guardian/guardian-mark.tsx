@@ -1,5 +1,5 @@
 import type {ArchetypeCode, RhythmCode} from '@/domain/algorithm/types';
-import {GUARDIAN_VISUALS, RHYTHM_VISUAL_CUES} from '@/domain/guardian/visuals';
+import {getGuardianPortrait, GUARDIAN_VISUALS, RHYTHM_VISUAL_CUES} from '@/domain/guardian/visuals';
 
 interface GuardianMarkProps {
   archetype: ArchetypeCode;
@@ -11,6 +11,15 @@ interface GuardianMarkProps {
 
 export function GuardianMark({archetype, rhythm, label, typeNumber, compact = false}: GuardianMarkProps) {
   const visual = GUARDIAN_VISUALS[archetype];
+  const portrait = getGuardianPortrait(archetype, rhythm);
+
+  if (portrait) {
+    return (
+      <div aria-label={label} className={`guardian-portrait${compact ? ' guardian-portrait--compact' : ''}`} role="img" style={{backgroundImage: `url(${portrait.src})`, backgroundPosition: `${portrait.sheetPosition * 100 / 3}% center`}}>
+        {typeNumber ? <small>{typeNumber}</small> : null}
+      </div>
+    );
+  }
 
   return (
     <div
