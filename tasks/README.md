@@ -30,7 +30,8 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-013 | Guardian visual identity system | Complete |
 | TASK-014 | Guardian concept art and result-content refinement | Complete |
 | TASK-015 | First production Guardian family | Complete |
-| TASK-016+ | Remaining Guardian families, final QA, and deployment | Planned |
+| TASK-016 | Fox and Deer production Guardian families | Complete |
+| TASK-017+ | Remaining Guardian families, final QA, and deployment | Planned |
 
 ## Required task sections
 

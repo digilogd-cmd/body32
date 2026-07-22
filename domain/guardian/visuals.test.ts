@@ -16,6 +16,8 @@ describe('Guardian visual system', () => {
   it('resolves production portraits only for completed Guardian families', () => {
     expect(getGuardianPortrait('TIGER', 'IGNITE')).toEqual({src: '/characters/tiger-rhythms-v1.png', sheetPosition: 0});
     expect(getGuardianPortrait('TIGER', 'REFLECT')?.sheetPosition).toBe(3);
-    expect(getGuardianPortrait('FOX', 'IGNITE')).toBeUndefined();
+    expect(getGuardianPortrait('FOX', 'IGNITE')?.src).toBe('/characters/fox-rhythms-v1.png');
+    expect(getGuardianPortrait('DEER', 'WEAVE')?.src).toBe('/characters/deer-rhythms-v1.png');
+    expect(getGuardianPortrait('CRANE', 'IGNITE')).toBeUndefined();
   });
 });
