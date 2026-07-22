@@ -22,6 +22,7 @@
     "typesLabel": "32 BODY32 identities",
     "typesIntro": "4 rhythms",
     "typesOutro": "32 distinct identities",
+    "rhythms": {"ignite": "Ignite", "weave": "Weave", "ground": "Ground", "reflect": "Reflect"},
     "how": {
       "eyebrow": "YOUR JOURNEY",
       "title": "Reflect, understand, and keep it.",

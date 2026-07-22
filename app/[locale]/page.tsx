@@ -10,6 +10,7 @@ type LocalePageProps = {
 
 const steps = ['reflect', 'decode', 'meet'] as const;
 const principles = ['private', 'transparent', 'inclusive'] as const;
+const rhythms = ['ignite', 'weave', 'ground', 'reflect'] as const;
 
 export default async function LocalePage({params}: LocalePageProps) {
   const {locale} = await params;
@@ -59,11 +60,25 @@ export default async function LocalePage({params}: LocalePageProps) {
       </section>
 
       <section className="identity-strip" aria-label={t('typesLabel')}>
-        <p>{t('typesIntro')}</p>
-        <div className="type-grid" aria-hidden="true">
-          {Array.from({length: 32}, (_, index) => <span key={index} />)}
+        <div className="identity-strip__bookend identity-strip__bookend--start">
+          <strong>4</strong>
+          <span>{t('typesIntro')}</span>
         </div>
-        <p>{t('typesOutro')}</p>
+        <div className="rhythm-map" aria-hidden="true">
+          {rhythms.map((rhythm) => (
+            <div className="rhythm-map__row" data-rhythm={rhythm} key={rhythm}>
+              <span className="rhythm-map__label">{t(`rhythms.${rhythm}`)}</span>
+              <span className="rhythm-map__line" />
+              <span className="rhythm-map__guardians">
+                {Array.from({length: 8}, (_, index) => <i key={index} />)}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div className="identity-strip__bookend identity-strip__bookend--end">
+          <strong>32</strong>
+          <span>{t('typesOutro')}</span>
+        </div>
       </section>
 
       <section className="section how" id="how-it-works" aria-labelledby="how-title">
