@@ -40,7 +40,8 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-023 | Landing orbit typography spacing | Complete |
 | TASK-024 | Resilient quiz progress | Complete |
 | TASK-025 | Rhythm-to-Guardian identity map | Complete |
-| TASK-026+ | Owner feedback, launch decisions, and deployment | Planned |
+| TASK-026 | Definitive landing counter separation | In progress |
+| TASK-027+ | Owner feedback, launch decisions, and deployment | Planned |
 
 ## Required task sections
 

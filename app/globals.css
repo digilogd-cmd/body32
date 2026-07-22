@@ -104,9 +104,9 @@ h1 em { color: var(--color-action-primary); font-family: Georgia, 'Times New Rom
 .identity-orbit { position: relative; width: min(78vw, 32rem); aspect-ratio: 1; margin-inline: auto; border-radius: 50%; background: radial-gradient(circle, var(--color-bg-surface) 0 32%, transparent 32.5%), radial-gradient(circle at 48% 42%, rgb(255 255 255 / 85%), rgb(238 245 239 / 45%) 52%, transparent 72%); }
 .orbit { position: absolute; inset: 8%; border: 1px solid var(--color-border-strong); border-radius: 50%; }
 .orbit--inner { inset: 24%; border-style: dashed; opacity: 0.7; }
-.identity-core { position: absolute; inset: 32%; display: grid; grid-template-rows: auto auto auto; align-content: center; gap: clamp(0.08rem, 0.4vw, 0.24rem); padding: 8%; border: 1px solid var(--color-border-subtle); border-radius: 50%; background: var(--color-bg-surface); text-align: center; box-shadow: var(--shadow-2); }
+.identity-core { position: absolute; inset: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8%; border: 1px solid var(--color-border-subtle); border-radius: 50%; background: var(--color-bg-surface); text-align: center; box-shadow: var(--shadow-2); }
 .identity-core span, .identity-core small { display: block; color: var(--color-text-muted); font-size: clamp(0.48rem, 1.25vw, 0.65rem); font-weight: 700; line-height: 1.2; letter-spacing: 0.12em; }
-.identity-core strong { display: block; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3.25rem, 9vw, 5.25rem); font-weight: 400; line-height: 0.88; }
+.identity-core strong { display: block; margin: 0.12em 0 0.18em; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3rem, 8.5vw, 5rem); font-weight: 400; line-height: 1; }
 .element { position: absolute; display: grid; width: 2.6rem; aspect-ratio: 1; place-items: center; border: 1px solid color-mix(in srgb, currentColor 35%, transparent); border-radius: 50%; background: var(--color-bg-surface); font-family: Georgia, serif; font-size: 0.9rem; box-shadow: var(--shadow-1); transform: translate(-50%, -50%); }
 .element--wood { top: 5%; left: 50%; color: var(--color-element-wood); }
 .element--fire { top: 36%; left: 96%; color: var(--color-element-fire); }
