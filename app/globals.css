@@ -107,6 +107,16 @@ h1 em { color: var(--color-action-primary); font-family: Georgia, 'Times New Rom
 .identity-core { position: absolute; inset: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8%; border: 1px solid var(--color-border-subtle); border-radius: 50%; background: var(--color-bg-surface); text-align: center; box-shadow: var(--shadow-2); }
 .identity-core span, .identity-core small { display: block; color: var(--color-text-muted); font-size: clamp(0.48rem, 1.25vw, 0.65rem); font-weight: 700; line-height: 1.2; letter-spacing: 0.12em; }
 .identity-core strong { display: block; margin: 0.12em 0 0.18em; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3rem, 8.5vw, 5rem); font-weight: 400; line-height: 1; }
+.guardian-constellation span { position: absolute; z-index: 2; width: clamp(2.5rem, 8vw, 4rem); aspect-ratio: 0.72; overflow: hidden; border: 1px solid var(--color-border-subtle); border-radius: 48% 52% 45% 55%; background: var(--color-bg-surface); box-shadow: var(--shadow-1); transform: translate(-50%, -50%); }
+.guardian-constellation img { object-fit: contain; padding: 4%; }
+.guardian-constellation span:nth-child(1) { top: 3%; left: 50%; }
+.guardian-constellation span:nth-child(2) { top: 17%; left: 82%; }
+.guardian-constellation span:nth-child(3) { top: 50%; left: 97%; }
+.guardian-constellation span:nth-child(4) { top: 83%; left: 82%; }
+.guardian-constellation span:nth-child(5) { top: 97%; left: 50%; }
+.guardian-constellation span:nth-child(6) { top: 83%; left: 18%; }
+.guardian-constellation span:nth-child(7) { top: 50%; left: 3%; }
+.guardian-constellation span:nth-child(8) { top: 17%; left: 18%; }
 .element { position: absolute; display: grid; width: 2.6rem; aspect-ratio: 1; place-items: center; border: 1px solid color-mix(in srgb, currentColor 35%, transparent); border-radius: 50%; background: var(--color-bg-surface); font-family: Georgia, serif; font-size: 0.9rem; box-shadow: var(--shadow-1); transform: translate(-50%, -50%); }
 .element--wood { top: 5%; left: 50%; color: var(--color-element-wood); }
 .element--fire { top: 36%; left: 96%; color: var(--color-element-fire); }
@@ -135,6 +145,20 @@ h1 em { color: var(--color-action-primary); font-family: Georgia, 'Times New Rom
 .section-heading { max-width: 42rem; }
 h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); font-weight: 620; letter-spacing: -0.05em; line-height: 1.08; }
 .section-heading > p:last-child, .guardian-copy > p { max-width: 37rem; margin: var(--space-6) 0 0; color: var(--color-text-secondary); font-size: 1.02rem; line-height: 1.7; }
+.body-profile-preview { display: grid; align-items: center; gap: clamp(var(--space-10), 8vw, var(--space-20)); }
+.body-profile-preview__copy > p:not(.eyebrow) { max-width: 40rem; margin: var(--space-6) 0 0; color: var(--color-text-secondary); font-size: 1rem; line-height: 1.75; }
+.body-profile-preview__copy ul { display: grid; gap: var(--space-3); padding: 0; margin: var(--space-8) 0 0; list-style: none; }
+.body-profile-preview__copy li { display: flex; align-items: start; gap: var(--space-3); color: var(--color-text-secondary); font-size: 0.86rem; line-height: 1.55; }
+.body-profile-preview__copy li::before { width: 0.45rem; aspect-ratio: 1; margin-top: 0.45rem; border-radius: 50%; background: var(--color-action-primary); content: ''; flex: 0 0 auto; }
+.profile-demo { display: grid; gap: var(--space-5); padding: clamp(var(--space-6), 5vw, var(--space-10)); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-2xl); background: var(--color-bg-surface); box-shadow: var(--shadow-2); }
+.profile-demo header { display: flex; align-items: end; justify-content: space-between; gap: var(--space-5); padding-bottom: var(--space-6); border-bottom: 1px solid var(--color-border-subtle); }
+.profile-demo header span { color: var(--color-action-primary); font-size: 0.65rem; font-weight: 750; letter-spacing: 0.1em; }
+.profile-demo header strong { font-family: Georgia, serif; font-size: 3.5rem; font-weight: 400; line-height: 0.8; }
+.profile-demo > div { display: grid; grid-template-columns: minmax(7rem, 1fr) 1.4fr; align-items: center; gap: var(--space-4); }
+.profile-demo > div > span { color: var(--color-text-secondary); font-size: 0.72rem; }
+.profile-demo i { height: 0.42rem; overflow: hidden; border-radius: var(--radius-full); background: var(--color-border-subtle); }
+.profile-demo i b { display: block; height: 100%; border-radius: inherit; background: var(--color-action-primary); }
+.profile-demo small { padding-top: var(--space-5); border-top: 1px solid var(--color-border-subtle); color: var(--color-text-muted); font-size: 0.65rem; line-height: 1.5; }
 .steps { display: grid; gap: 1px; padding: 0; margin: var(--space-16) 0 0; background: var(--color-border-subtle); list-style: none; }
 .steps li { min-height: 18rem; padding: var(--space-8); background: var(--color-bg-canvas); }
 .step-number { color: var(--color-action-primary); font-family: Georgia, serif; font-size: 1rem; }
@@ -150,6 +174,13 @@ h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); font-weight: 620; letter-s
 .guardian-mark strong { position: absolute; right: 16%; bottom: 15%; color: var(--color-action-tint); font-size: 1.1rem; letter-spacing: 0.12em; }
 .guardian-preview .eyebrow { color: #a9c9af; }
 .guardian-copy > p { color: #d5d1cb; }
+.passport-showcase { position: relative; display: grid; width: min(100%, 23rem); min-height: 29rem; align-content: space-between; justify-self: center; overflow: hidden; padding: var(--space-7); border: 1px solid rgb(255 255 255 / 18%); border-radius: var(--radius-2xl); background: radial-gradient(circle at 78% 22%, rgb(79 122 90 / 52%), transparent 38%), var(--color-bg-inverse-subtle); box-shadow: var(--shadow-2); }
+.passport-showcase > span { position: relative; z-index: 2; font-size: 0.68rem; font-weight: 750; letter-spacing: 0.1em; }
+.passport-showcase img { position: absolute; right: 6%; bottom: -6%; width: 56%; height: 86%; object-fit: contain; }
+.passport-showcase > div { position: relative; z-index: 2; display: grid; max-width: 10rem; gap: var(--space-2); align-self: end; }
+.passport-showcase small { color: var(--color-text-inverse-muted); font-size: 0.58rem; letter-spacing: 0.06em; }
+.passport-showcase strong { font-size: 1.2rem; }
+.passport-showcase > b { position: absolute; top: 46%; left: var(--space-7); color: rgb(255 255 255 / 8%); font-family: Georgia, serif; font-size: 7rem; font-weight: 400; }
 .artifact-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-8); }
 .artifact-tags span { padding: var(--space-2) var(--space-4); border: 1px solid rgb(255 255 255 / 20%); border-radius: var(--radius-full); font-size: 0.75rem; }
 
@@ -395,6 +426,7 @@ h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); font-weight: 620; letter-s
 
 @media (min-width: 48rem) {
   .hero { grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr); }
+  .body-profile-preview { grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.85fr); }
   .body-profile-overview { grid-template-columns: minmax(0, 1fr) auto; }
   .steps, .principle-grid { grid-template-columns: repeat(3, 1fr); }
   .guardian-preview { grid-template-columns: minmax(18rem, 0.85fr) minmax(0, 1.15fr); }

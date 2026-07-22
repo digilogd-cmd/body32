@@ -1,4 +1,5 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
+import Image from 'next/image';
 
 import {LanguageSwitcher} from '@/components/ui/language-switcher';
 import {Link} from '@/i18n/navigation';
@@ -11,6 +12,8 @@ type LocalePageProps = {
 const steps = ['reflect', 'decode', 'meet'] as const;
 const principles = ['private', 'transparent', 'inclusive'] as const;
 const rhythms = ['ignite', 'weave', 'ground', 'reflect'] as const;
+const heroGuardians = ['tiger', 'fox', 'deer', 'crane', 'bear', 'wolf', 'owl', 'dolphin'] as const;
+const bodySignals = ['energy', 'recovery', 'thermal', 'digestion', 'stress'] as const;
 
 export default async function LocalePage({params}: LocalePageProps) {
   const {locale} = await params;
@@ -46,16 +49,32 @@ export default async function LocalePage({params}: LocalePageProps) {
         <div className="identity-orbit" aria-label={t('visualLabel')}>
           <div className="orbit orbit--outer" />
           <div className="orbit orbit--inner" />
-          <div className="element element--wood">木</div>
-          <div className="element element--fire">火</div>
-          <div className="element element--earth">土</div>
-          <div className="element element--metal">金</div>
-          <div className="element element--water">水</div>
+          <div className="guardian-constellation" aria-hidden="true">
+            {heroGuardians.map((guardian) => <span key={guardian}><Image alt="" fill sizes="64px" src={`/characters/${guardian}-ignite-v1.webp`} /></span>)}
+          </div>
           <div className="identity-core">
             <span>{t('visualOverline')}</span>
             <strong>32</strong>
             <small>{t('visualCaption')}</small>
           </div>
+        </div>
+      </section>
+
+      <section className="section body-profile-preview" aria-labelledby="body-profile-title">
+        <div className="body-profile-preview__copy">
+          <p className="eyebrow">{t('profilePreview.eyebrow')}</p>
+          <h2 id="body-profile-title">{t('profilePreview.title')}</h2>
+          <p>{t('profilePreview.description')}</p>
+          <ul>
+            <li>{t('profilePreview.points.signals')}</li>
+            <li>{t('profilePreview.points.context')}</li>
+            <li>{t('profilePreview.points.action')}</li>
+          </ul>
+        </div>
+        <div className="profile-demo" aria-label={t('profilePreview.demoLabel')}>
+          <header><span>BODY32 PROFILE</span><strong>72</strong></header>
+          {bodySignals.map((signal, index) => <div key={signal}><span>{t(`profilePreview.signals.${signal}`)}</span><i><b style={{width: `${[78, 61, 44, 69, 58][index]}%`}} /></i></div>)}
+          <small>{t('profilePreview.demoNote')}</small>
         </div>
       </section>
 
@@ -99,7 +118,12 @@ export default async function LocalePage({params}: LocalePageProps) {
       </section>
 
       <section className="section guardian-preview" aria-labelledby="guardian-title">
-        <div className="guardian-mark" aria-hidden="true"><span>B</span><strong>32</strong></div>
+        <div className="passport-showcase" aria-hidden="true">
+          <span>BODY32 PASSPORT</span>
+          <Image alt="" height={430} src="/characters/tiger-ignite-v1.webp" width={200} />
+          <div><small>TYPE 01 · IGNITE</small><strong>불꽃 호랑이</strong></div>
+          <b>B32</b>
+        </div>
         <div className="guardian-copy">
           <p className="eyebrow">{t('guardian.eyebrow')}</p>
           <h2 id="guardian-title">{t('guardian.title')}</h2>

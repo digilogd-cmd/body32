@@ -23,6 +23,7 @@
     "typesIntro": "4가지 리듬",
     "typesOutro": "32가지 고유한 정체성",
     "rhythms": {"ignite": "점화", "weave": "연결", "ground": "안정", "reflect": "성찰"},
+    "profilePreview": {"eyebrow": "MORE THAN A PERSONALITY MATCH", "title": "실제로 활용할 수 있는 Body Profile.", "description": "Guardian 아래에는 에너지, 회복, 온냉 편안함, 소화 리듬, 스트레스 유연성을 투명하게 읽은 결과가 있습니다.", "points": {"signals": "최근 패턴 20문항으로 읽는 다섯 Body Signal", "context": "MBTI는 설명 맥락만 바꾸고 신체 점수에는 영향 없음", "action": "현재 리듬에 맞춘 한 가지 7일 실험"}, "demoLabel": "BODY32 프로필 예시", "signals": {"energy": "에너지", "recovery": "회복", "thermal": "온냉 편안함", "digestion": "소화 리듬", "stress": "스트레스 유연성"}, "demoNote": "설명을 위한 예시이며 실제 값은 당신의 답변에서 계산됩니다."},
     "how": {
       "eyebrow": "YOUR JOURNEY",
       "title": "답하고, 이해하고, 간직하세요.",

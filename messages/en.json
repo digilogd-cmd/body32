@@ -23,6 +23,7 @@
     "typesIntro": "4 rhythms",
     "typesOutro": "32 distinct identities",
     "rhythms": {"ignite": "Ignite", "weave": "Weave", "ground": "Ground", "reflect": "Reflect"},
+    "profilePreview": {"eyebrow": "MORE THAN A PERSONALITY MATCH", "title": "A Body Profile you can actually use.", "description": "Your Guardian sits on top of a transparent view of energy, recovery, thermal comfort, digestive rhythm, and stress flexibility.", "points": {"signals": "Five Body Signals from 20 recent-pattern questions", "context": "Optional MBTI context changes framing, never body scores", "action": "One practical seven-day experiment for your current rhythm"}, "demoLabel": "Example BODY32 profile", "signals": {"energy": "Energy", "recovery": "Recovery", "thermal": "Thermal comfort", "digestion": "Digestive rhythm", "stress": "Stress flexibility"}, "demoNote": "Illustrative preview — your values come from your own answers."},
     "how": {
       "eyebrow": "YOUR JOURNEY",
       "title": "Reflect, understand, and keep it.",
