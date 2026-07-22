@@ -1,9 +1,9 @@
 export const DIMENSION_KEYS = [
-  'activation',
-  'adaptability',
-  'steadiness',
-  'reflection',
-  'connection'
+  'energy',
+  'recovery',
+  'thermalComfort',
+  'digestiveRhythm',
+  'stressFlexibility'
 ] as const;
 
 export const RHYTHM_CODES = ['IGNITE', 'WEAVE', 'GROUND', 'REFLECT'] as const;
@@ -60,9 +60,12 @@ export interface Body32Result {
   readonly elements: ScoreRecord<ElementKey>;
   readonly axes: {
     readonly initiative: number;
-    readonly flexibility: number;
-    readonly relational: number;
+    readonly adaptability: number;
+    readonly resilience: number;
   };
+  readonly bodyScore: number;
+  readonly strongestSignals: readonly DimensionKey[];
+  readonly quietestSignals: readonly DimensionKey[];
   readonly confidence: ConfidenceBand;
   readonly tieBreakApplied: boolean;
 }

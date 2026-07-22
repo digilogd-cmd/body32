@@ -105,7 +105,7 @@
       "title": "답변이 만든 다섯 가지 성향",
       "description": "BODY32는 AI의 추측이 아니라, 공개된 동일한 계산 규칙으로 20개 답변을 다섯 성향 축에 정리합니다."
     },
-    "dimensions": {"activation": "시작 에너지", "adaptability": "적응 유연성", "steadiness": "지속 안정성", "reflection": "내면 관찰", "connection": "관계 감응"},
+    "dimensions": {"energy": "에너지", "recovery": "회복", "thermalComfort": "온냉 편안함", "digestiveRhythm": "소화 리듬", "stressFlexibility": "스트레스 유연성"},
     "passport": {
       "title": "이 결과를 나만의 Passport로",
       "description": "지금 보이는 유형과 Balance를 정사각형 카드 또는 세로형 스토리 PNG로 저장할 수 있습니다.",

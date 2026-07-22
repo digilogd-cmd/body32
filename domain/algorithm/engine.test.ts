@@ -29,14 +29,15 @@ describe('BODY32 algorithm', () => {
   });
 
   it('maps a clear active, steady, relational pattern to Ignite Tiger', () => {
-    const result = calculateBody32Result(submissionFor({activation: 100, adaptability: 0, steadiness: 100, reflection: 0, connection: 100}));
+    const result = calculateBody32Result(submissionFor({energy: 100, recovery: 100, thermalComfort: 100, digestiveRhythm: 100, stressFlexibility: 0}));
     expect(result.rhythm).toBe('IGNITE');
     expect(result.archetype).toBe('TIGER');
     expect(result.stableTypeId).toBe('B32_IGNITE_TIGER');
+    expect(result.bodyScore).toBeCloseTo(66.67, 1);
   });
 
   it('is deterministic and bounded', () => {
-    const submission = submissionFor({activation: 100, adaptability: 50, steadiness: 0, reflection: 50, connection: 100});
+    const submission = submissionFor({energy: 100, recovery: 50, thermalComfort: 0, digestiveRhythm: 50, stressFlexibility: 100});
     const first = calculateBody32Result(submission);
     const second = calculateBody32Result(submission);
     expect(first).toEqual(second);
@@ -51,7 +52,7 @@ describe('BODY32 algorithm', () => {
     expect(() => calculateBody32Result({...submissionFor(), answers: {}})).toThrow(AlgorithmInputError);
     expect(() => calculateBody32Result({...submissionFor(), algorithmVersion: 'unknown'})).toThrow(AlgorithmInputError);
     const invalid = submissionFor();
-    expect(() => calculateBody32Result({...invalid, answers: {...invalid.answers, Q_ACT_01: 6}})).toThrow(AlgorithmInputError);
+    expect(() => calculateBody32Result({...invalid, answers: {...invalid.answers, Q_ENE_01: 6}})).toThrow(AlgorithmInputError);
   });
 });
 

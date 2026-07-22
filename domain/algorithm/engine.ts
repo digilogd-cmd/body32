@@ -64,8 +64,8 @@ function selectRhythm(scores: ScoreRecord<RhythmCode>, dimensions: ScoreRecord<D
   return {rhythm: candidates[0] ?? 'IGNITE', tieBreakApplied: initialTie};
 }
 
-function selectArchetype(initiative: number, flexibility: number, relational: number): ArchetypeCode {
-  const key = `${initiative >= 0 ? '+' : '-'}${flexibility >= 0 ? '+' : '-'}${relational >= 0 ? '+' : '-'}`;
+function selectArchetype(initiative: number, adaptability: number, resilience: number): ArchetypeCode {
+  const key = `${initiative >= 0 ? '+' : '-'}${adaptability >= 0 ? '+' : '-'}${resilience >= 0 ? '+' : '-'}`;
   const mapping: Readonly<Record<string, ArchetypeCode>> = {
     '+++': 'DOLPHIN', '++-': 'FOX', '+-+': 'TIGER', '+--': 'WOLF',
     '-++': 'DEER', '-+-': 'CRANE', '--+': 'BEAR', '---': 'OWL'
@@ -81,18 +81,22 @@ export function calculateBody32Result(submission: QuizSubmission): Body32Result 
   const rhythmScores = Object.fromEntries(RHYTHM_CODES.map((code) => [code, weightedScore(dimensions, RHYTHM_COEFFICIENTS[code])])) as ScoreRecord<RhythmCode>;
   const {rhythm, tieBreakApplied} = selectRhythm(rhythmScores, dimensions);
   const axes = {
-    initiative: dimensions.activation - dimensions.reflection,
-    flexibility: dimensions.adaptability - dimensions.steadiness,
-    relational: dimensions.connection - 50
+    initiative: dimensions.energy - 50,
+    adaptability: dimensions.stressFlexibility - 50,
+    resilience: (dimensions.recovery + dimensions.digestiveRhythm) / 2 - 50
   };
-  const archetype = selectArchetype(axes.initiative, axes.flexibility, axes.relational);
+  const archetype = selectArchetype(axes.initiative, axes.adaptability, axes.resilience);
   const stableTypeId = `B32_${rhythm}_${archetype}`;
   if (!getGuardianType(stableTypeId)) throw new Error(`Stable type is absent from registry: ${stableTypeId}`);
   const elements = Object.fromEntries(ELEMENT_KEYS.map((key) => [key, weightedScore(dimensions, ELEMENT_COEFFICIENTS[key])])) as ScoreRecord<(typeof ELEMENT_KEYS)[number]>;
   const sortedRhythms = RHYTHM_CODES.map((code) => rhythmScores[code]).sort((a, b) => b - a);
   const rhythmMargin = (sortedRhythms[0] ?? 0) - (sortedRhythms[1] ?? 0);
-  const archetypeMargin = Math.min(Math.abs(axes.initiative), Math.abs(axes.flexibility), Math.abs(axes.relational));
-  const confidence = rhythmMargin >= 12 && archetypeMargin >= 15 ? 'high' : rhythmMargin >= 6 && archetypeMargin >= 8 ? 'medium' : 'low';
+  const archetypeMargin = Math.min(Math.abs(axes.initiative), Math.abs(axes.adaptability), Math.abs(axes.resilience));
+  const confidence = rhythmMargin >= 10 && archetypeMargin >= 14 ? 'high' : rhythmMargin >= 5 && archetypeMargin >= 7 ? 'medium' : 'low';
+  const bodyScore = (dimensions.recovery + dimensions.digestiveRhythm + dimensions.stressFlexibility) / 3;
+  const rankedSignals = [...DIMENSION_KEYS].sort((a, b) => dimensions[b] - dimensions[a]);
+  const strongestSignals = rankedSignals.slice(0, 2);
+  const quietestSignals = rankedSignals.slice(-2).reverse();
 
-  return {algorithmVersion: ALGORITHM_VERSION, questionSetVersion: QUESTION_SET_VERSION, stableTypeId, rhythm, archetype, dimensions, rhythmScores, elements, axes, confidence, tieBreakApplied};
+  return {algorithmVersion: ALGORITHM_VERSION, questionSetVersion: QUESTION_SET_VERSION, stableTypeId, rhythm, archetype, dimensions, rhythmScores, elements, axes, bodyScore, strongestSignals, quietestSignals, confidence, tieBreakApplied};
 }

@@ -1,6 +1,6 @@
 import type {DimensionKey, QuizQuestion} from './types';
 
-export const QUESTION_SET_VERSION = 'questions-v1-draft';
+export const QUESTION_SET_VERSION = 'body-pattern-v1';
 
 type QuestionSource = readonly [
   id: string,
@@ -11,26 +11,26 @@ type QuestionSource = readonly [
 ];
 
 const QUESTION_SOURCE: readonly QuestionSource[] = [
-  ['Q_ACT_01', 'activation', 'positive', 'I usually turn an idea into action quickly.', '나는 보통 아이디어가 생기면 빠르게 행동으로 옮긴다.'],
-  ['Q_ACT_02', 'activation', 'positive', 'Starting something new gives me energy.', '새로운 일을 시작하면 에너지가 생기는 편이다.'],
-  ['Q_ACT_03', 'activation', 'reverse', 'I prefer to wait until every detail is settled before I begin.', '모든 세부 사항이 정리될 때까지 시작을 미루는 편이다.'],
-  ['Q_ACT_04', 'activation', 'reverse', 'I conserve my energy until action is truly necessary.', '꼭 행동해야 할 때까지 에너지를 아껴두는 편이다.'],
-  ['Q_ADP_01', 'adaptability', 'positive', 'I can change my plan without losing my rhythm.', '계획이 바뀌어도 내 리듬을 잃지 않고 적응할 수 있다.'],
-  ['Q_ADP_02', 'adaptability', 'positive', 'Unexpected situations often make me curious.', '예상하지 못한 상황이 생기면 호기심이 생기는 편이다.'],
-  ['Q_ADP_03', 'adaptability', 'reverse', 'Sudden changes drain me for a long time.', '갑작스러운 변화가 생기면 오랫동안 지치는 편이다.'],
-  ['Q_ADP_04', 'adaptability', 'reverse', 'I feel best when each day follows a familiar pattern.', '매일 익숙한 방식으로 흘러갈 때 가장 편안하다.'],
-  ['Q_STD_01', 'steadiness', 'positive', 'I am good at maintaining a routine over time.', '일정한 루틴을 오랫동안 유지하는 편이다.'],
-  ['Q_STD_02', 'steadiness', 'positive', 'People can usually rely on my pace and follow-through.', '주변 사람들은 나의 꾸준함과 마무리를 믿을 수 있다.'],
-  ['Q_STD_03', 'steadiness', 'reverse', 'My energy often rises and falls sharply.', '내 에너지는 크게 오르내리는 편이다.'],
-  ['Q_STD_04', 'steadiness', 'reverse', 'Repetition quickly makes me want to switch direction.', '같은 일이 반복되면 금방 다른 방향으로 바꾸고 싶어진다.'],
-  ['Q_REF_01', 'reflection', 'positive', 'I notice small signals before I decide what they mean.', '의미를 판단하기 전에 작은 신호를 먼저 살피는 편이다.'],
-  ['Q_REF_02', 'reflection', 'positive', 'Quiet time helps me understand what I am feeling.', '조용한 시간은 내가 느끼는 것을 이해하는 데 도움이 된다.'],
-  ['Q_REF_03', 'reflection', 'reverse', 'I usually understand my thoughts by speaking or acting first.', '먼저 말하거나 행동하면서 내 생각을 이해하는 편이다.'],
-  ['Q_REF_04', 'reflection', 'reverse', 'I rarely revisit a decision once I have made it.', '한번 내린 결정은 다시 돌아보는 일이 드물다.'],
-  ['Q_CON_01', 'connection', 'positive', 'The mood of a group affects how I respond.', '함께 있는 사람들의 분위기는 내 반응에 영향을 준다.'],
-  ['Q_CON_02', 'connection', 'positive', 'Sharing an experience often makes it more meaningful to me.', '경험을 누군가와 나누면 더 의미 있게 느껴진다.'],
-  ['Q_CON_03', 'connection', 'reverse', 'I do my best thinking with minimal input from others.', '다른 사람의 의견이 적을 때 가장 깊이 생각할 수 있다.'],
-  ['Q_CON_04', 'connection', 'reverse', 'I usually restore my energy by focusing only on my own space.', '나만의 공간에 집중하며 에너지를 회복하는 편이다.']
+  ['Q_ENE_01', 'energy', 'positive', 'I feel ready to move not long after waking.', '잠에서 깬 뒤 오래 지나지 않아 움직일 준비가 되는 편이다.'],
+  ['Q_ENE_02', 'energy', 'positive', 'Once I begin something, my energy builds quickly.', '무언가 시작하면 에너지가 빠르게 올라오는 편이다.'],
+  ['Q_ENE_03', 'energy', 'reverse', 'I need a long warm-up before I feel fully active.', '제대로 활동하려면 긴 준비 시간이 필요한 편이다.'],
+  ['Q_ENE_04', 'energy', 'reverse', 'After a busy period, my energy drops sharply.', '바쁜 시간을 보내고 나면 에너지가 급격히 떨어지는 편이다.'],
+  ['Q_REC_01', 'recovery', 'positive', 'A normal night of sleep usually leaves me feeling restored.', '평소처럼 잠을 자고 나면 대체로 회복됐다고 느낀다.'],
+  ['Q_REC_02', 'recovery', 'positive', 'A short quiet break helps me regain my balance.', '짧게 조용히 쉬어도 다시 균형을 찾는 데 도움이 된다.'],
+  ['Q_REC_03', 'recovery', 'reverse', 'Tiredness often carries over into the next day.', '피로가 다음 날까지 이어지는 경우가 많다.'],
+  ['Q_REC_04', 'recovery', 'reverse', 'Even when I have time to rest, it is hard to unwind.', '쉴 시간이 있어도 긴장을 풀기가 어려운 편이다.'],
+  ['Q_THR_01', 'thermalComfort', 'positive', 'I tend to feel warm sooner than people around me.', '주변 사람들보다 더 빨리 덥다고 느끼는 편이다.'],
+  ['Q_THR_02', 'thermalComfort', 'positive', 'Warm or stuffy spaces drain my energy.', '덥거나 답답한 공간에서는 에너지가 쉽게 떨어진다.'],
+  ['Q_THR_03', 'thermalComfort', 'reverse', 'My hands or feet often feel cold.', '손이나 발이 차갑게 느껴질 때가 많다.'],
+  ['Q_THR_04', 'thermalComfort', 'reverse', 'I often need more warmth than others to feel comfortable.', '편안함을 느끼려면 다른 사람보다 더 따뜻해야 하는 편이다.'],
+  ['Q_DIG_01', 'digestiveRhythm', 'positive', 'Regular meal times help my body feel settled.', '식사 시간이 규칙적이면 몸이 편안하게 느껴진다.'],
+  ['Q_DIG_02', 'digestiveRhythm', 'positive', 'My appetite and meal comfort are fairly predictable.', '식욕과 식사 후 편안함이 비교적 일정한 편이다.'],
+  ['Q_DIG_03', 'digestiveRhythm', 'reverse', 'Stress often changes how comfortable my stomach feels.', '스트레스를 받으면 속의 편안함이 달라지는 경우가 많다.'],
+  ['Q_DIG_04', 'digestiveRhythm', 'reverse', 'Late or heavy meals tend to linger uncomfortably.', '늦거나 무거운 식사를 하면 불편함이 오래가는 편이다.'],
+  ['Q_STR_01', 'stressFlexibility', 'positive', 'I can adjust a changed plan without losing my whole rhythm.', '계획이 바뀌어도 전체 리듬을 잃지 않고 적응할 수 있다.'],
+  ['Q_STR_02', 'stressFlexibility', 'positive', 'After a stressful moment, I usually return to baseline steadily.', '스트레스가 지나가면 비교적 안정적으로 평소 상태로 돌아온다.'],
+  ['Q_STR_03', 'stressFlexibility', 'reverse', 'Unexpected changes drain me for a long time.', '예상하지 못한 변화가 생기면 오랫동안 지치는 편이다.'],
+  ['Q_STR_04', 'stressFlexibility', 'reverse', 'Tension stays in my body even after the situation is over.', '상황이 끝난 뒤에도 몸의 긴장이 오래 남는 편이다.']
 ];
 
 export const QUESTIONS: readonly QuizQuestion[] = QUESTION_SOURCE.map(([id, dimension, direction, en, ko], index) => ({

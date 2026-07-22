@@ -105,7 +105,7 @@
       "title": "Five tendencies shaped by your answers",
       "description": "BODY32 does not rely on an AI guess. The same published calculation rules organize your 20 answers into five tendency dimensions."
     },
-    "dimensions": {"activation": "Activation", "adaptability": "Adaptability", "steadiness": "Steadiness", "reflection": "Reflection", "connection": "Connection"},
+    "dimensions": {"energy": "Energy", "recovery": "Recovery", "thermalComfort": "Thermal comfort", "digestiveRhythm": "Digestive rhythm", "stressFlexibility": "Stress flexibility"},
     "passport": {
       "title": "Turn this result into your Passport",
       "description": "Save this Guardian and Balance as a square card or a vertical story PNG.",
