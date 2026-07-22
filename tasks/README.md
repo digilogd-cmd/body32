@@ -33,7 +33,8 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-016 | Fox and Deer production Guardian families | Complete |
 | TASK-017 | Crane and Bear production Guardian families | Complete |
 | TASK-018 | Complete production Guardian portrait set | Complete |
-| TASK-019+ | Final product QA, performance optimization, and deployment readiness | Planned |
+| TASK-019 | Final product QA and character performance optimization | Complete |
+| TASK-020+ | Editorial review, release packaging, and deployment | Planned |
 
 ## Required task sections
 

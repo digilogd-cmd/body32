@@ -33,14 +33,14 @@ export interface GuardianPortraitAsset {
 const tigerSheetPositions: Readonly<Record<RhythmCode, number>> = {IGNITE: 0, WEAVE: 1, GROUND: 2, REFLECT: 3};
 
 const portraitSheets: Partial<Record<ArchetypeCode, string>> = {
-  TIGER: '/characters/tiger-rhythms-v1.png',
-  FOX: '/characters/fox-rhythms-v1.png',
-  DEER: '/characters/deer-rhythms-v1.png',
-  CRANE: '/characters/crane-rhythms-v1.png',
-  BEAR: '/characters/bear-rhythms-v1.png',
-  WOLF: '/characters/wolf-rhythms-v1.png',
-  OWL: '/characters/owl-rhythms-v1.png',
-  DOLPHIN: '/characters/dolphin-rhythms-v1.png'
+  TIGER: '/characters/tiger-rhythms-v1.webp',
+  FOX: '/characters/fox-rhythms-v1.webp',
+  DEER: '/characters/deer-rhythms-v1.webp',
+  CRANE: '/characters/crane-rhythms-v1.webp',
+  BEAR: '/characters/bear-rhythms-v1.webp',
+  WOLF: '/characters/wolf-rhythms-v1.webp',
+  OWL: '/characters/owl-rhythms-v1.webp',
+  DOLPHIN: '/characters/dolphin-rhythms-v1.webp'
 };
 
 export function getGuardianPortrait(archetype: ArchetypeCode, rhythm: RhythmCode): GuardianPortraitAsset | undefined {
