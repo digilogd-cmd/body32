@@ -27,7 +27,8 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-010 | Guardian result and BODY32 Balance | Complete |
 | TASK-011 | Downloadable BODY32 Passport | Complete |
 | TASK-012 | Safe sharing, accessibility, and pre-launch QA | Complete |
-| TASK-013+ | Guardian visuals, content refinement, and deployment | Planned |
+| TASK-013 | Guardian visual identity system | Complete |
+| TASK-014+ | Content refinement, production character art, and deployment | Planned |
 
 ## Required task sections
 

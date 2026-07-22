@@ -4,6 +4,7 @@ import {useTranslations} from 'next-intl';
 import {useEffect, useRef, useState} from 'react';
 
 import {Button} from '@/components/ui/button';
+import {GuardianMark} from '@/components/guardian/guardian-mark';
 import {ELEMENT_KEYS, type Body32Result} from '@/domain/algorithm/types';
 import {ARCHETYPE_CONTENT, RHYTHM_CONTENT} from '@/domain/guardian/content';
 import {getGuardianType} from '@/domain/guardian/registry';
@@ -77,10 +78,7 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
       </header>
 
       <section className="result-hero" aria-labelledby="result-title">
-        <div className="guardian-emblem" aria-label={t('guardianFallback', {name})} role="img">
-          <span>{result.archetype.slice(0, 1)}</span>
-          <small>{typeNumber}</small>
-        </div>
+        <GuardianMark archetype={result.archetype} label={t('guardianFallback', {name})} rhythm={result.rhythm} typeNumber={typeNumber} />
         <div className="result-identity">
           <p className="result-kicker">{result.rhythm} · {result.archetype}</p>
           <h1 id="result-title" ref={titleRef} tabIndex={-1}>{name}</h1>
@@ -169,7 +167,7 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
         </div>
         <div className="passport-mini" aria-label={t('passport.previewLabel', {name})} role="img">
           <div className="passport-mini-header"><span>BODY32</span><b>TYPE {typeNumber}</b></div>
-          <strong>{result.archetype.slice(0, 1)}</strong>
+          <GuardianMark archetype={result.archetype} compact label={t('guardianFallback', {name})} rhythm={result.rhythm} />
           <div><small>{result.rhythm} · {result.archetype}</small><h3>{name}</h3></div>
           <div className="passport-mini-balance" aria-hidden="true">
             {ELEMENT_KEYS.map((element) => <span key={element} style={{height: `${Math.round(result.elements[element])}%`}} />)}
