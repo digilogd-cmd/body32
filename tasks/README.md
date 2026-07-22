@@ -45,8 +45,9 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-028 | Product Requirement Document v1 revision | Complete |
 | TASK-029 | UX Flow v1 revision | Complete |
 | TASK-030 | Body Profile algorithm v1 revision | Complete |
-| TASK-031 | Profile onboarding and analysis experience | Next |
-| TASK-032+ | Result depth, Passport, landing, platform documents, and release validation | Planned |
+| TASK-031 | Profile onboarding and analysis experience | Complete |
+| TASK-032 | Body Profile result depth and practical guidance | Next |
+| TASK-033+ | Passport, landing, platform documents, and release validation | Planned |
 
 ## Required task sections
 

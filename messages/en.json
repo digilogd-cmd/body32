@@ -53,6 +53,26 @@
     "footer": "Decode Your Body. Balance Your Life."
   },
   "Quiz": {
+    "journey": {"label": "Assessment progress", "profile": "Profile", "body": "Body", "quiz": "Quiz", "result": "Result"},
+    "profile": {
+      "eyebrow": "PROFILE {current} OF {total}",
+      "nickname": {"title": "What should your Passport call you?", "description": "Optional. This stays on your device and is used only to personalize your result."},
+      "nicknamePlaceholder": "Nickname",
+      "age": {"title": "Which age range fits you?", "description": "Optional context for future safety and experience research. It does not change your v1 type."},
+      "ageOptions": {"18-24": "18–24", "25-34": "25–34", "35-44": "35–44", "45-54": "45–54", "55+": "55+", "prefer-not": "Prefer not to say"},
+      "height": {"title": "What is your height?", "description": "Optional body context. BODY32 does not grade your body or use this to choose your Guardian."},
+      "weight": {"title": "What is your weight?", "description": "Optional body context. No ideal-weight judgment or BMI grade is shown."},
+      "mbti": {"title": "Do you know your MBTI?", "description": "Optional. It can shape how habits are explained, but it never predicts your health or Body Profile."},
+      "blood": {"title": "Would you like to add your blood type?", "description": "Optional cultural context only. Blood type does not affect health, constitution, or your result."},
+      "unknown": "Unknown",
+      "skip": "Skip",
+      "beginQuiz": "Begin body questions"
+    },
+    "analysis": {
+      "title": "Reading your current Body Pattern…",
+      "description": "The same transparent rules are organizing your 20 answers. No remote AI diagnosis is taking place.",
+      "steps": {"signals": "Reading Body Signals", "elements": "Mapping Five Elements", "lifestyle": "Understanding Lifestyle Rhythm", "guardian": "Meeting your Guardian", "passport": "Preparing your Passport"}
+    },
     "intro": {
       "eyebrow": "BEFORE WE BEGIN",
       "title": "Think of the version of you that feels most familiar right now.",

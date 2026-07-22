@@ -53,6 +53,26 @@
     "footer": "Decode Your Body. Balance Your Life."
   },
   "Quiz": {
+    "journey": {"label": "진행 단계", "profile": "프로필", "body": "바디", "quiz": "질문", "result": "결과"},
+    "profile": {
+      "eyebrow": "PROFILE {current} / {total}",
+      "nickname": {"title": "Passport에 어떤 이름을 적을까요?", "description": "선택 사항입니다. 이 기기에만 저장되며 결과를 개인화하는 데 사용합니다."},
+      "nicknamePlaceholder": "닉네임",
+      "age": {"title": "어느 연령대에 가까운가요?", "description": "선택 사항이며 향후 안전성과 경험 연구를 위한 맥락입니다. v1 유형에는 영향을 주지 않습니다."},
+      "ageOptions": {"18-24": "18–24", "25-34": "25–34", "35-44": "35–44", "45-54": "45–54", "55+": "55세 이상", "prefer-not": "응답하지 않음"},
+      "height": {"title": "키는 어느 정도인가요?", "description": "선택적인 신체 맥락입니다. 몸을 평가하거나 Guardian을 정하는 데 사용하지 않습니다."},
+      "weight": {"title": "몸무게는 어느 정도인가요?", "description": "선택적인 신체 맥락입니다. 이상 체중이나 BMI 등급을 표시하지 않습니다."},
+      "mbti": {"title": "알고 있는 MBTI가 있나요?", "description": "선택 사항입니다. 습관 설명 방식을 조정할 수 있지만 건강이나 Body Profile을 예측하지 않습니다."},
+      "blood": {"title": "혈액형을 추가할까요?", "description": "선택적인 문화적 맥락일 뿐입니다. 건강, 체질, 결과 계산에 영향을 주지 않습니다."},
+      "unknown": "모름",
+      "skip": "건너뛰기",
+      "beginQuiz": "신체 질문 시작"
+    },
+    "analysis": {
+      "title": "지금의 Body Pattern을 읽고 있어요…",
+      "description": "동일하고 투명한 규칙으로 20개 답변을 정리합니다. 원격 AI 의료 진단을 수행하지 않습니다.",
+      "steps": {"signals": "Body Signal 읽기", "elements": "오행 표현 연결하기", "lifestyle": "생활 리듬 이해하기", "guardian": "Guardian 만나기", "passport": "Passport 준비하기"}
+    },
     "intro": {
       "eyebrow": "BEFORE WE BEGIN",
       "title": "지금의 나와 가장 가까운 모습을 떠올려보세요.",

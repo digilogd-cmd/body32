@@ -1,5 +1,5 @@
 import {cleanup, fireEvent, render, screen} from '@testing-library/react';
-import {afterEach, describe, expect, it, vi} from 'vitest';
+import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
 
 import {QUESTIONS} from '@/domain/algorithm/questions';
 
@@ -9,6 +9,7 @@ const translations: Record<string, string> = {
   'intro.eyebrow': 'Before', 'intro.title': 'Ready?', 'intro.description': 'Description',
   'intro.questions': 'questions', 'intro.minutes': 'minutes', 'intro.personalData': 'details',
   'intro.start': 'Start quiz', 'intro.back': 'Home', 'intro.note': 'Private',
+  'profile.skip': 'Skip', 'profile.beginQuiz': 'Begin body questions',
   answered: '{count} answered', progress: 'Question {current} of {total}', questionEyebrow: 'Question {current}',
   answerLegend: 'Choose one', 'answers.1': 'Not at all', 'answers.2': 'Mostly not',
   'answers.3': 'In between', 'answers.4': 'Mostly yes', 'answers.5': 'Very much',
@@ -33,6 +34,18 @@ vi.mock('@/i18n/navigation', () => ({
 
 const questions = QUESTIONS.map(({id, order, prompt}) => ({id, order, prompt: prompt.en}));
 
+function beginQuestions() {
+  fireEvent.click(screen.getByRole('button', {name: 'Start quiz'}));
+  for (let index = 0; index < 6; index += 1) fireEvent.click(screen.getByRole('button', {name: 'Skip'}));
+}
+
+beforeEach(() => {
+  Object.defineProperty(window, 'matchMedia', {
+    configurable: true,
+    value: vi.fn(() => ({matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn()}))
+  });
+});
+
 afterEach(() => {
   cleanup();
   window.localStorage.clear();
@@ -41,7 +54,7 @@ afterEach(() => {
 describe('QuizExperience', () => {
   it('starts anonymously and requires an answer before continuing', () => {
     render(<QuizExperience locale="en" questions={questions} />);
-    fireEvent.click(screen.getByRole('button', {name: 'Start quiz'}));
+    beginQuestions();
 
     const continueButton = screen.getByRole('button', {name: 'Continue'});
     expect(continueButton).toBeDisabled();
@@ -51,7 +64,7 @@ describe('QuizExperience', () => {
 
   it('preserves a response when moving back', () => {
     render(<QuizExperience locale="en" questions={questions} />);
-    fireEvent.click(screen.getByRole('button', {name: 'Start quiz'}));
+    beginQuestions();
     fireEvent.click(screen.getByRole('radio', {name: '5Very much'}));
     fireEvent.click(screen.getByRole('button', {name: 'Continue'}));
     fireEvent.click(screen.getByRole('button', {name: 'Back'}));
@@ -72,15 +85,15 @@ describe('QuizExperience', () => {
     expect(screen.getByRole('radio', {name: '4Mostly yes'})).toBeChecked();
   });
 
-  it('calculates a result only after all 20 answers', () => {
+  it('calculates a result only after all 20 answers', async () => {
     render(<QuizExperience locale="en" questions={questions} />);
-    fireEvent.click(screen.getByRole('button', {name: 'Start quiz'}));
+    beginQuestions();
 
     questions.forEach((_, index) => {
       fireEvent.click(screen.getByRole('radio', {name: '3In between'}));
       fireEvent.click(screen.getByRole('button', {name: index === questions.length - 1 ? 'Finish' : 'Continue'}));
     });
 
-    expect(screen.getByRole('heading', {name: 'Comet Dolphin', level: 1})).toBeInTheDocument();
+    expect(await screen.findByRole('heading', {name: 'Comet Dolphin', level: 1})).toBeInTheDocument();
   });
 });

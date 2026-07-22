@@ -186,6 +186,41 @@ h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); font-weight: 620; letter-s
 .quiz-actions { display: flex; align-items: center; gap: var(--space-6); }
 .quiz-disclaimer { max-width: 40rem; margin: var(--space-6) 0 0; color: var(--color-text-muted); font-size: 0.75rem; line-height: 1.6; }
 
+.assessment-progress { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-2); padding: 0 0 var(--space-6); margin: 0 0 var(--space-6); border-bottom: 1px solid var(--color-border-subtle); list-style: none; }
+.assessment-progress li { display: flex; align-items: center; gap: var(--space-2); color: var(--color-text-muted); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.assessment-progress li span { display: grid; width: 1.55rem; aspect-ratio: 1; place-items: center; border: 1px solid var(--color-border-strong); border-radius: 50%; font-size: 0.58rem; }
+.assessment-progress li[aria-current='step'] { color: var(--color-action-primary); }
+.assessment-progress li[aria-current='step'] span { border-color: var(--color-action-primary); background: var(--color-action-primary); color: var(--color-text-inverse); }
+.assessment-progress li.is-complete span { border-color: var(--color-action-primary); color: var(--color-action-primary); }
+.profile-panel { display: grid; grid-template-rows: auto 1fr auto auto; }
+.profile-copy { align-self: end; padding-top: var(--space-8); }
+.profile-copy h1 { max-width: 42rem; margin-top: var(--space-3); font-size: clamp(2.2rem, 5vw, 3.7rem); line-height: 1.1; }
+.profile-copy > p:last-child { max-width: 39rem; margin: var(--space-4) 0 0; color: var(--color-text-secondary); line-height: 1.65; }
+.profile-control { display: grid; align-content: start; min-height: 15rem; padding-block: var(--space-10); }
+.profile-input { width: 100%; min-height: 4.5rem; padding: 0 var(--space-5); border: 1px solid var(--color-border-strong); border-radius: var(--radius-xl); outline: 0; background: var(--color-bg-surface); color: var(--color-text-primary); font: inherit; font-size: 1.2rem; transition: border-color var(--duration-fast), box-shadow var(--duration-fast); }
+.profile-input:focus { border-color: var(--color-action-primary); box-shadow: 0 0 0 0.2rem var(--color-action-tint); }
+.profile-choice-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+.profile-choice-grid--compact { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.profile-choice-grid button { min-height: 4rem; padding: var(--space-3); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); background: var(--color-bg-surface); color: var(--color-text-primary); font-weight: 700; cursor: pointer; }
+.profile-choice-grid button:hover, .profile-choice-grid button.is-selected { border-color: var(--color-action-primary); background: var(--color-action-tint); color: var(--color-action-pressed); }
+.measurement-entry { position: relative; }
+.measurement-entry .profile-input { padding-right: 5rem; font-family: Georgia, serif; font-size: 2rem; }
+.measurement-entry span { position: absolute; top: 50%; right: var(--space-6); color: var(--color-text-muted); transform: translateY(-50%); }
+.profile-panel .quiz-navigation > div { display: flex; align-items: center; gap: var(--space-4); }
+.profile-panel .text-link { border: 0; background: transparent; cursor: pointer; }
+.analysis-panel { width: min(100%, 48rem); padding: clamp(var(--space-6), 5vw, var(--space-12)); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-2xl); background: var(--color-bg-surface); box-shadow: var(--shadow-1); }
+.analysis-panel h1 { max-width: 42rem; margin-top: var(--space-4); font-size: clamp(2.35rem, 6vw, 4.4rem); }
+.analysis-panel > p:not(.eyebrow) { max-width: 38rem; margin: var(--space-5) 0 0; color: var(--color-text-secondary); line-height: 1.65; }
+.analysis-stages { display: grid; gap: var(--space-3); padding: 0; margin: var(--space-12) 0 0; list-style: none; }
+.analysis-stages li { display: flex; min-height: 3.6rem; align-items: center; gap: var(--space-4); padding: 0 var(--space-5); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); color: var(--color-text-muted); opacity: 0.46; }
+.analysis-stages li span { width: 0.7rem; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 50%; }
+.result-owner { margin: 0 0 var(--space-3); color: var(--result-accent); font-size: 0.72rem; font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .analysis-stages li { animation: analysis-reveal 0.5s ease forwards; animation-delay: calc(var(--analysis-order) * 0.48s); }
+  @keyframes analysis-reveal { to { border-color: color-mix(in srgb, var(--color-action-primary) 45%, transparent); color: var(--color-text-primary); opacity: 1; transform: translateX(0.25rem); } }
+}
+
 .quiz-panel { min-height: min(48rem, calc(100svh - (var(--space-5) * 2))); padding: clamp(var(--space-6), 5vw, var(--space-12)); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-2xl); background: color-mix(in srgb, var(--color-bg-surface) 94%, transparent); box-shadow: var(--shadow-1); }
 .quiz-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); }
 .quiz-header > span { color: var(--color-text-muted); font-size: 0.75rem; }
@@ -362,6 +397,11 @@ h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); font-weight: 620; letter-s
   .quiz-facts li { min-height: 5.5rem; }
   .quiz-actions { align-items: stretch; flex-direction: column; text-align: center; }
   .quiz-panel { min-height: calc(100svh - (var(--space-5) * 2)); padding: var(--space-5); border-radius: var(--radius-xl); }
+  .assessment-progress { gap: var(--space-1); }
+  .assessment-progress li { display: grid; justify-items: center; gap: var(--space-1); text-align: center; }
+  .profile-choice-grid, .profile-choice-grid--compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-control { min-height: 17rem; }
+  .profile-panel .quiz-navigation > div { align-items: stretch; flex-direction: column-reverse; }
   .question-content { min-height: 32rem; padding-block: var(--space-8); }
   .likert-scale { grid-template-columns: 1fr; }
   .likert-scale label { min-height: 3.75rem; align-items: center; grid-template-columns: auto 1fr; justify-items: start; text-align: left; }

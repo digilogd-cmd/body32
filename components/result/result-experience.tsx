@@ -5,6 +5,7 @@ import {useEffect, useRef, useState} from 'react';
 
 import {Button} from '@/components/ui/button';
 import {GuardianMark} from '@/components/guardian/guardian-mark';
+import type {ProfileContext} from '@/components/quiz/quiz-experience';
 import {ELEMENT_KEYS, type Body32Result} from '@/domain/algorithm/types';
 import {ARCHETYPE_CONTENT, RHYTHM_CONTENT} from '@/domain/guardian/content';
 import {ARCHETYPE_GUIDANCE} from '@/domain/guardian/guidance';
@@ -16,11 +17,12 @@ import {shareResult, type ShareResultStatus} from '@/lib/share/share-result';
 
 export interface ResultExperienceProps {
   locale: AppLocale;
+  profile: ProfileContext;
   result: Body32Result;
   onRestart: () => void;
 }
 
-export function ResultExperience({locale, result, onRestart}: ResultExperienceProps) {
+export function ResultExperience({locale, profile, result, onRestart}: ResultExperienceProps) {
   const t = useTranslations('Result');
   const shareT = useTranslations('Share');
   const [downloadState, setDownloadState] = useState<'idle' | 'working' | 'saved' | 'error'>('idle');
@@ -82,6 +84,7 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
       <section className="result-hero" aria-labelledby="result-title">
         <GuardianMark archetype={result.archetype} label={t('guardianFallback', {name})} rhythm={result.rhythm} typeNumber={typeNumber} />
         <div className="result-identity">
+          {profile.nickname ? <p className="result-owner">{profile.nickname}</p> : null}
           <p className="result-kicker">{result.rhythm} · {result.archetype}</p>
           <h1 id="result-title" ref={titleRef} tabIndex={-1}>{name}</h1>
           <p className="result-archetype-line">{archetype[locale]}</p>
