@@ -40,7 +40,7 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-023 | Landing orbit typography spacing | Complete |
 | TASK-024 | Resilient quiz progress | Complete |
 | TASK-025 | Rhythm-to-Guardian identity map | Complete |
-| TASK-026 | Definitive landing counter separation | In progress |
+| TASK-026 | Definitive landing counter separation | Complete |
 | TASK-027 | Product Vision direction reset | Complete |
 | TASK-028 | Product Requirement Document v1 revision | Complete |
 | TASK-029 | UX Flow v1 revision | Complete |
@@ -49,7 +49,7 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-032 | Body Profile result depth and practical guidance | Complete |
 | TASK-033 | Landing and Passport platform positioning | Complete |
 | TASK-034 | Platform architecture documents | Complete |
-| TASK-035 | Release-candidate validation and polish | Next |
+| TASK-035 | Release-candidate validation and polish | Complete |
 
 ## Required task sections
 

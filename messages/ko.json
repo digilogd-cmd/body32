@@ -16,7 +16,7 @@
     "time": "약 3분",
     "questions": "20개 질문",
     "noSignup": "가입 없이 시작",
-    "visualLabel": "32가지 유형을 상징하는 오행 궤도",
+    "visualLabel": "32가지 BODY32 정체성을 둘러싼 여덟 Guardian 계열",
     "visualOverline": "YOUR TYPE AMONG",
     "visualCaption": "GUARDIANS",
     "typesLabel": "32가지 BODY32 유형",
@@ -36,6 +36,7 @@
     },
     "guardian": {
       "eyebrow": "MORE THAN A RESULT",
+      "sampleName": "불꽃 호랑이",
       "title": "결과는 숫자가 아니라, 기억하고 싶은 정체성이 됩니다.",
       "description": "각 BODY32 유형에는 고유한 Guardian과 균형 이야기, 그리고 저장하고 공유할 수 있는 Passport가 함께합니다.",
       "artifactsLabel": "결과 구성"

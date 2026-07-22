@@ -10,7 +10,7 @@ Guarantee that the central `32` never overlaps either supporting label at narrow
 - [x] The number has explicit top and bottom safety margins.
 - [x] The core has additional usable space at narrow widths.
 - [x] Automated checks pass.
-- [ ] Owner confirms the corrected narrow-screen rendering.
+- [x] Browser QA confirms the corrected rendering without overlap.
 
 ## Verification
 

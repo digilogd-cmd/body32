@@ -16,7 +16,7 @@
     "time": "About 3 min",
     "questions": "20 questions",
     "noSignup": "No sign-up",
-    "visualLabel": "Five-element orbit representing 32 identities",
+    "visualLabel": "Eight Guardian families orbiting the 32 BODY32 identities",
     "visualOverline": "YOUR TYPE AMONG",
     "visualCaption": "GUARDIANS",
     "typesLabel": "32 BODY32 identities",
@@ -36,6 +36,7 @@
     },
     "guardian": {
       "eyebrow": "MORE THAN A RESULT",
+      "sampleName": "Blaze Tiger",
       "title": "Not just a score. An identity worth remembering.",
       "description": "Every BODY32 type comes with a distinct Guardian, a story about balance, and a Passport made to save and share.",
       "artifactsLabel": "Your result includes"

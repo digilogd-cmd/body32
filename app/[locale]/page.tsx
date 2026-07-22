@@ -121,7 +121,7 @@ export default async function LocalePage({params}: LocalePageProps) {
         <div className="passport-showcase" aria-hidden="true">
           <span>BODY32 PASSPORT</span>
           <Image alt="" height={430} src="/characters/tiger-ignite-v1.webp" width={200} />
-          <div><small>TYPE 01 · IGNITE</small><strong>불꽃 호랑이</strong></div>
+          <div><small>TYPE 01 · IGNITE</small><strong>{t('guardian.sampleName')}</strong></div>
           <b>B32</b>
         </div>
         <div className="guardian-copy">

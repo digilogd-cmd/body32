@@ -109,14 +109,14 @@ h1 em { color: var(--color-action-primary); font-family: Georgia, 'Times New Rom
 .identity-core strong { display: block; margin: 0.12em 0 0.18em; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3rem, 8.5vw, 5rem); font-weight: 400; line-height: 1; }
 .guardian-constellation span { position: absolute; z-index: 2; width: clamp(2.5rem, 8vw, 4rem); aspect-ratio: 0.72; overflow: hidden; border: 1px solid var(--color-border-subtle); border-radius: 48% 52% 45% 55%; background: var(--color-bg-surface); box-shadow: var(--shadow-1); transform: translate(-50%, -50%); }
 .guardian-constellation img { object-fit: contain; padding: 4%; }
-.guardian-constellation span:nth-child(1) { top: 3%; left: 50%; }
-.guardian-constellation span:nth-child(2) { top: 17%; left: 82%; }
-.guardian-constellation span:nth-child(3) { top: 50%; left: 97%; }
-.guardian-constellation span:nth-child(4) { top: 83%; left: 82%; }
-.guardian-constellation span:nth-child(5) { top: 97%; left: 50%; }
-.guardian-constellation span:nth-child(6) { top: 83%; left: 18%; }
-.guardian-constellation span:nth-child(7) { top: 50%; left: 3%; }
-.guardian-constellation span:nth-child(8) { top: 17%; left: 18%; }
+.guardian-constellation span:nth-child(1) { top: 7%; left: 50%; }
+.guardian-constellation span:nth-child(2) { top: 20%; left: 78%; }
+.guardian-constellation span:nth-child(3) { top: 50%; left: 91%; }
+.guardian-constellation span:nth-child(4) { top: 80%; left: 78%; }
+.guardian-constellation span:nth-child(5) { top: 93%; left: 50%; }
+.guardian-constellation span:nth-child(6) { top: 80%; left: 22%; }
+.guardian-constellation span:nth-child(7) { top: 50%; left: 9%; }
+.guardian-constellation span:nth-child(8) { top: 20%; left: 22%; }
 .element { position: absolute; display: grid; width: 2.6rem; aspect-ratio: 1; place-items: center; border: 1px solid color-mix(in srgb, currentColor 35%, transparent); border-radius: 50%; background: var(--color-bg-surface); font-family: Georgia, serif; font-size: 0.9rem; box-shadow: var(--shadow-1); transform: translate(-50%, -50%); }
 .element--wood { top: 5%; left: 50%; color: var(--color-element-wood); }
 .element--fire { top: 36%; left: 96%; color: var(--color-element-fire); }
