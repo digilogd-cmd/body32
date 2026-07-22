@@ -7,6 +7,7 @@ import {Button} from '@/components/ui/button';
 import {GuardianMark} from '@/components/guardian/guardian-mark';
 import {ELEMENT_KEYS, type Body32Result} from '@/domain/algorithm/types';
 import {ARCHETYPE_CONTENT, RHYTHM_CONTENT} from '@/domain/guardian/content';
+import {ARCHETYPE_GUIDANCE} from '@/domain/guardian/guidance';
 import {getGuardianType} from '@/domain/guardian/registry';
 import {Link} from '@/i18n/navigation';
 import type {AppLocale} from '@/i18n/routing';
@@ -34,6 +35,7 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
 
   const rhythm = RHYTHM_CONTENT[result.rhythm];
   const archetype = ARCHETYPE_CONTENT[result.archetype];
+  const guidance = ARCHETYPE_GUIDANCE[result.archetype];
   const name = guardian.name[locale];
   const dominantElement = ELEMENT_KEYS.reduce((highest, element) => (
     result.elements[element] > result.elements[highest] ? element : highest
@@ -100,12 +102,12 @@ export function ResultExperience({locale, result, onRestart}: ResultExperiencePr
           <article>
             <span>01</span>
             <h3>{t('story.strength')}</h3>
-            <p>{rhythm.strength[locale]}</p>
+            <p>{guidance.strength[locale]}</p>
           </article>
           <article>
             <span>02</span>
             <h3>{t('story.reflection')}</h3>
-            <p>{rhythm.reflection[locale]}</p>
+            <p>{guidance.reflection[locale]}</p>
           </article>
         </div>
       </section>
