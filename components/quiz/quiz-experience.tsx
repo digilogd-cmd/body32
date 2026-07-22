@@ -15,6 +15,11 @@ import type {AppLocale} from '@/i18n/routing';
 
 type QuizItem = {id: string; order: number; prompt: string};
 type QuizStage = 'intro' | 'questions' | 'complete';
+type QuizProgressSnapshot = {
+  stage: QuizStage;
+  index: number;
+  answers: Record<string, LikertAnswer>;
+};
 
 export interface QuizExperienceProps {
   locale: AppLocale;
@@ -23,18 +28,74 @@ export interface QuizExperienceProps {
 
 const answerValues = [1, 2, 3, 4, 5] as const;
 
+export function getQuizProgressStorageKey(locale: AppLocale) {
+  return `body32:quiz-progress:${locale}:${QUESTION_SET_VERSION}:${ALGORITHM_VERSION}`;
+}
+
 export function QuizExperience({locale, questions}: QuizExperienceProps) {
   const t = useTranslations('Quiz');
   const [stage, setStage] = useState<QuizStage>('intro');
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, LikertAnswer>>({});
   const [result, setResult] = useState<Body32Result | null>(null);
+  const [progressRestored, setProgressRestored] = useState(false);
   const questionTitleRef = useRef<HTMLHeadingElement>(null);
+  const storageKey = getQuizProgressStorageKey(locale);
 
   const question = questions[index];
   const selected = question ? answers[question.id] : undefined;
   const answeredCount = useMemo(() => Object.keys(answers).length, [answers]);
   const progress = questions.length ? (answeredCount / questions.length) * 100 : 0;
+
+  useEffect(() => {
+    const restoreTimer = window.setTimeout(() => {
+      try {
+        const stored = window.localStorage.getItem(storageKey);
+        if (!stored) return;
+
+        const snapshot = JSON.parse(stored) as Partial<QuizProgressSnapshot>;
+        const questionIds = new Set(questions.map(({id}) => id));
+        const validAnswers = Object.fromEntries(
+          Object.entries(snapshot.answers ?? {}).filter(
+            ([id, value]) => questionIds.has(id) && answerValues.includes(value as LikertAnswer)
+          )
+        ) as Record<string, LikertAnswer>;
+        const restoredIndex = Math.min(Math.max(Number(snapshot.index) || 0, 0), Math.max(questions.length - 1, 0));
+
+        setAnswers(validAnswers);
+        setIndex(restoredIndex);
+        if (snapshot.stage === 'complete' && Object.keys(validAnswers).length === questions.length) {
+          setResult(calculateBody32Result({
+            algorithmVersion: ALGORITHM_VERSION,
+            questionSetVersion: QUESTION_SET_VERSION,
+            answers: validAnswers
+          }));
+          setStage('complete');
+        } else if (snapshot.stage === 'questions') {
+          setStage('questions');
+        }
+      } catch {
+        window.localStorage.removeItem(storageKey);
+      } finally {
+        setProgressRestored(true);
+      }
+    }, 0);
+
+    return () => window.clearTimeout(restoreTimer);
+  }, [questions, storageKey]);
+
+  useEffect(() => {
+    if (!progressRestored) return;
+    try {
+      if (stage === 'intro' && Object.keys(answers).length === 0) {
+        window.localStorage.removeItem(storageKey);
+        return;
+      }
+      window.localStorage.setItem(storageKey, JSON.stringify({stage, index, answers} satisfies QuizProgressSnapshot));
+    } catch {
+      // The quiz remains usable when browser storage is unavailable.
+    }
+  }, [answers, index, progressRestored, stage, storageKey]);
 
   useEffect(() => {
     if (stage === 'questions') questionTitleRef.current?.focus();

@@ -3,7 +3,7 @@ import {afterEach, describe, expect, it, vi} from 'vitest';
 
 import {QUESTIONS} from '@/domain/algorithm/questions';
 
-import {QuizExperience} from './quiz-experience';
+import {getQuizProgressStorageKey, QuizExperience} from './quiz-experience';
 
 const translations: Record<string, string> = {
   'intro.eyebrow': 'Before', 'intro.title': 'Ready?', 'intro.description': 'Description',
@@ -33,7 +33,10 @@ vi.mock('@/i18n/navigation', () => ({
 
 const questions = QUESTIONS.map(({id, order, prompt}) => ({id, order, prompt: prompt.en}));
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  window.localStorage.clear();
+});
 
 describe('QuizExperience', () => {
   it('starts anonymously and requires an answer before continuing', () => {
@@ -54,6 +57,19 @@ describe('QuizExperience', () => {
     fireEvent.click(screen.getByRole('button', {name: 'Back'}));
 
     expect(screen.getByRole('radio', {name: '5Very much'})).toBeChecked();
+  });
+
+  it('restores saved progress after the page is reopened', async () => {
+    const savedAnswers = Object.fromEntries(questions.slice(0, 19).map(({id}) => [id, 4]));
+    window.localStorage.setItem(getQuizProgressStorageKey('en'), JSON.stringify({
+      stage: 'questions', index: 18, answers: savedAnswers
+    }));
+
+    render(<QuizExperience locale="en" questions={questions} />);
+
+    expect(await screen.findByText('19 answered')).toBeInTheDocument();
+    expect(screen.getByText(questions[18]!.prompt)).toBeInTheDocument();
+    expect(screen.getByRole('radio', {name: '4Mostly yes'})).toBeChecked();
   });
 
   it('calculates a result only after all 20 answers', () => {
