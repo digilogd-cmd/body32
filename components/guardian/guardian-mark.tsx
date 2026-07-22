@@ -1,5 +1,7 @@
+import Image from 'next/image';
+
 import type {ArchetypeCode, RhythmCode} from '@/domain/algorithm/types';
-import {getGuardianPortrait, GUARDIAN_VISUALS, RHYTHM_VISUAL_CUES} from '@/domain/guardian/visuals';
+import {getGuardianPortrait} from '@/domain/guardian/visuals';
 
 interface GuardianMarkProps {
   archetype: ArchetypeCode;
@@ -10,30 +12,11 @@ interface GuardianMarkProps {
 }
 
 export function GuardianMark({archetype, rhythm, label, typeNumber, compact = false}: GuardianMarkProps) {
-  const visual = GUARDIAN_VISUALS[archetype];
   const portrait = getGuardianPortrait(archetype, rhythm);
 
-  if (portrait) {
-    return (
-      <div aria-label={label} className={`guardian-portrait${compact ? ' guardian-portrait--compact' : ''}`} role="img" style={{backgroundImage: `url(${portrait.src})`, backgroundPosition: `${portrait.sheetPosition * 100 / 3}% center`}}>
-        {typeNumber ? <small>{typeNumber}</small> : null}
-      </div>
-    );
-  }
-
   return (
-    <div
-      aria-label={`${label} · ${visual.emblem}`}
-      className={`guardian-mark${compact ? ' guardian-mark--compact' : ''}`}
-      data-rhythm={RHYTHM_VISUAL_CUES[rhythm]}
-      data-shape={visual.shape}
-      role="img"
-    >
-      <span className="guardian-mark__field" aria-hidden="true" />
-      <span className="guardian-mark__form" aria-hidden="true">
-        <i /><i /><i />
-      </span>
-      <span className="guardian-mark__eyes" aria-hidden="true"><i /><i /></span>
+    <div aria-label={label} className={`guardian-portrait${compact ? ' guardian-portrait--compact' : ''}`} role="img">
+      <Image alt="" aria-hidden="true" fill sizes={compact ? '84px' : '(max-width: 767px) 78vw, 496px'} src={portrait.src} />
       {typeNumber ? <small>{typeNumber}</small> : null}
     </div>
   );

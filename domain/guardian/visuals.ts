@@ -27,24 +27,8 @@ export const RHYTHM_VISUAL_CUES: Readonly<Record<RhythmCode, string>> = {
 
 export interface GuardianPortraitAsset {
   readonly src: string;
-  readonly sheetPosition: number;
 }
 
-const tigerSheetPositions: Readonly<Record<RhythmCode, number>> = {IGNITE: 0, WEAVE: 1, GROUND: 2, REFLECT: 3};
-
-const portraitSheets: Partial<Record<ArchetypeCode, string>> = {
-  TIGER: '/characters/tiger-rhythms-v1.webp',
-  FOX: '/characters/fox-rhythms-v1.webp',
-  DEER: '/characters/deer-rhythms-v1.webp',
-  CRANE: '/characters/crane-rhythms-v1.webp',
-  BEAR: '/characters/bear-rhythms-v1.webp',
-  WOLF: '/characters/wolf-rhythms-v1.webp',
-  OWL: '/characters/owl-rhythms-v1.webp',
-  DOLPHIN: '/characters/dolphin-rhythms-v1.webp'
-};
-
-export function getGuardianPortrait(archetype: ArchetypeCode, rhythm: RhythmCode): GuardianPortraitAsset | undefined {
-  const src = portraitSheets[archetype];
-  if (!src) return undefined;
-  return {src, sheetPosition: tigerSheetPositions[rhythm]};
+export function getGuardianPortrait(archetype: ArchetypeCode, rhythm: RhythmCode): GuardianPortraitAsset {
+  return {src: `/characters/${archetype.toLowerCase()}-${rhythm.toLowerCase()}-v1.webp`};
 }

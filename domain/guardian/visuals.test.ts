@@ -14,15 +14,14 @@ describe('Guardian visual system', () => {
   });
 
   it('resolves production portraits only for completed Guardian families', () => {
-    expect(getGuardianPortrait('TIGER', 'IGNITE')).toEqual({src: '/characters/tiger-rhythms-v1.webp', sheetPosition: 0});
-    expect(getGuardianPortrait('TIGER', 'REFLECT')?.sheetPosition).toBe(3);
-    expect(getGuardianPortrait('FOX', 'IGNITE')?.src).toBe('/characters/fox-rhythms-v1.webp');
-    expect(getGuardianPortrait('DEER', 'WEAVE')?.src).toBe('/characters/deer-rhythms-v1.webp');
-    expect(getGuardianPortrait('CRANE', 'IGNITE')?.src).toBe('/characters/crane-rhythms-v1.webp');
-    expect(getGuardianPortrait('BEAR', 'GROUND')?.src).toBe('/characters/bear-rhythms-v1.webp');
-    expect(getGuardianPortrait('WOLF', 'IGNITE')?.src).toBe('/characters/wolf-rhythms-v1.webp');
-    expect(getGuardianPortrait('OWL', 'WEAVE')?.src).toBe('/characters/owl-rhythms-v1.webp');
-    expect(getGuardianPortrait('DOLPHIN', 'REFLECT')?.src).toBe('/characters/dolphin-rhythms-v1.webp');
+    expect(getGuardianPortrait('TIGER', 'IGNITE')).toEqual({src: '/characters/tiger-ignite-v1.webp'});
+    expect(getGuardianPortrait('FOX', 'IGNITE').src).toBe('/characters/fox-ignite-v1.webp');
+    expect(getGuardianPortrait('DEER', 'WEAVE').src).toBe('/characters/deer-weave-v1.webp');
+    expect(getGuardianPortrait('CRANE', 'IGNITE').src).toBe('/characters/crane-ignite-v1.webp');
+    expect(getGuardianPortrait('BEAR', 'GROUND').src).toBe('/characters/bear-ground-v1.webp');
+    expect(getGuardianPortrait('WOLF', 'IGNITE').src).toBe('/characters/wolf-ignite-v1.webp');
+    expect(getGuardianPortrait('OWL', 'WEAVE').src).toBe('/characters/owl-weave-v1.webp');
+    expect(getGuardianPortrait('DOLPHIN', 'REFLECT').src).toBe('/characters/dolphin-reflect-v1.webp');
   });
 
   it('has a production portrait for every Guardian combination', () => {
