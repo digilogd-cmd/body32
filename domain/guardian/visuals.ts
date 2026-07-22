@@ -35,7 +35,9 @@ const tigerSheetPositions: Readonly<Record<RhythmCode, number>> = {IGNITE: 0, WE
 const portraitSheets: Partial<Record<ArchetypeCode, string>> = {
   TIGER: '/characters/tiger-rhythms-v1.png',
   FOX: '/characters/fox-rhythms-v1.png',
-  DEER: '/characters/deer-rhythms-v1.png'
+  DEER: '/characters/deer-rhythms-v1.png',
+  CRANE: '/characters/crane-rhythms-v1.png',
+  BEAR: '/characters/bear-rhythms-v1.png'
 };
 
 export function getGuardianPortrait(archetype: ArchetypeCode, rhythm: RhythmCode): GuardianPortraitAsset | undefined {

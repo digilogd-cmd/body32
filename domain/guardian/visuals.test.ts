@@ -18,6 +18,8 @@ describe('Guardian visual system', () => {
     expect(getGuardianPortrait('TIGER', 'REFLECT')?.sheetPosition).toBe(3);
     expect(getGuardianPortrait('FOX', 'IGNITE')?.src).toBe('/characters/fox-rhythms-v1.png');
     expect(getGuardianPortrait('DEER', 'WEAVE')?.src).toBe('/characters/deer-rhythms-v1.png');
-    expect(getGuardianPortrait('CRANE', 'IGNITE')).toBeUndefined();
+    expect(getGuardianPortrait('CRANE', 'IGNITE')?.src).toBe('/characters/crane-rhythms-v1.png');
+    expect(getGuardianPortrait('BEAR', 'GROUND')?.src).toBe('/characters/bear-rhythms-v1.png');
+    expect(getGuardianPortrait('WOLF', 'IGNITE')).toBeUndefined();
   });
 });
