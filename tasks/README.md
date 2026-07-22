@@ -35,7 +35,8 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-018 | Complete production Guardian portrait set | Complete |
 | TASK-019 | Final product QA and character performance optimization | Complete |
 | TASK-020 | Editorial integrity and release packaging | Complete |
-| TASK-021+ | Owner review, launch decisions, and deployment | Planned |
+| TASK-021 | Local 32-Guardian review gallery | Complete |
+| TASK-022+ | Owner feedback, launch decisions, and deployment | Planned |
 
 ## Required task sections
 
