@@ -42,8 +42,9 @@ The `tasks/` directory contains bounded, verifiable units of work. Product truth
 | TASK-025 | Rhythm-to-Guardian identity map | Complete |
 | TASK-026 | Definitive landing counter separation | In progress |
 | TASK-027 | Product Vision direction reset | Complete |
-| TASK-028 | Product Requirement Document v1 revision | Next |
-| TASK-029+ | UX, design, data, algorithm, character, API, admin, and development guide revisions | Planned |
+| TASK-028 | Product Requirement Document v1 revision | Complete |
+| TASK-029 | UX Flow v1 revision | Next |
+| TASK-030+ | Design, data, algorithm, character, API, admin, development guide, and release implementation | Planned |
 
 ## Required task sections
 
